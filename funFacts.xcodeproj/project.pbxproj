@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD0079871D2C712700E00051 /* ChuckModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0079861D2C712700E00051 /* ChuckModel.swift */; };
 		DD2E80131C5B00840059C0E5 /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2E80121C5B00840059C0E5 /* ColorModel.swift */; };
 		DD90B3AF1C59D4AB008B21EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD90B3AE1C59D4AB008B21EE /* AppDelegate.swift */; };
 		DD90B3B11C59D4AB008B21EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD90B3B01C59D4AB008B21EE /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD0079861D2C712700E00051 /* ChuckModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChuckModel.swift; sourceTree = "<group>"; };
 		DD2E80121C5B00840059C0E5 /* ColorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorModel.swift; sourceTree = "<group>"; };
 		DD90B3AB1C59D4AB008B21EE /* funFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = funFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD90B3AE1C59D4AB008B21EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				DD90B3B01C59D4AB008B21EE /* ViewController.swift */,
 				DD2E80121C5B00840059C0E5 /* ColorModel.swift */,
 				DD90B3C01C5A9D24008B21EE /* FactModel.swift */,
+				DD0079861D2C712700E00051 /* ChuckModel.swift */,
 				DD90B3B21C59D4AB008B21EE /* Main.storyboard */,
 				DD90B3B51C59D4AB008B21EE /* Assets.xcassets */,
 				DD90B3B71C59D4AB008B21EE /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 				DD90B3C11C5A9D24008B21EE /* FactModel.swift in Sources */,
 				DD90B3B11C59D4AB008B21EE /* ViewController.swift in Sources */,
 				DD90B3AF1C59D4AB008B21EE /* AppDelegate.swift in Sources */,
+				DD0079871D2C712700E00051 /* ChuckModel.swift in Sources */,
 				DD2E80131C5B00840059C0E5 /* ColorModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

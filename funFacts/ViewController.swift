@@ -9,8 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var colorModel = ColorModel()
     let gradientLayer = CAGradientLayer()
-    let randomColor: UIColor = ColorModel().getRandomColor()
 
     @IBOutlet weak var funFactLabel: UILabel!
     @IBOutlet weak var funFactButton: UIButton!
@@ -29,6 +29,8 @@ class ViewController: UIViewController {
     
     @IBAction func showFunFact() {
         //let randomColor: UIColor = ColorModel().getRandomColor()
+        let randomColor: UIColor = colorModel.getRandomColor()
+
         view.backgroundColor = randomColor
         funFactButton.setTitleColor(randomColor, forState: .Normal)
         funFactLabel.text = factModel.getRandomFact()

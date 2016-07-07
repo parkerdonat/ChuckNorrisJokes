@@ -20,10 +20,13 @@ struct ColorModel {
         UIColor(red: 85/255.0, green: 176/255.0, blue: 112/255.0, alpha: 1.0), //green color
     ]
     
-    func getRandomColor() -> UIColor {
-        let randomNumber = GKRandomSource.sharedRandom().nextIntWithUpperBound(colors.count)
+    var selectedIndex: Int = 0
+    mutating func getRandomColor() -> UIColor  {
+        var randomNumber = GKRandomSource.sharedRandom().nextIntWithUpperBound(colors.count)
+        if randomNumber == selectedIndex {
+            randomNumber = (randomNumber + 1) % colors.count
+        }
+        selectedIndex = randomNumber
         return colors[randomNumber]
     }
-    
-    
 }
