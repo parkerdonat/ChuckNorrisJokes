@@ -27,8 +27,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showFunFact() {
-        //let randomColor: UIColor = ColorModel().getRandomColor()
-        let randomColor: UIColor = colorModel.getRandomColor()
+        let randomColor: UIColor = .randomColor()
 
         view.backgroundColor = randomColor
         funFactButton.setTitleColor(randomColor, forState: .Normal)
