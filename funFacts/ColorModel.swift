@@ -51,9 +51,9 @@ extension UIColor {
     static func randomColor() -> UIColor {
         // If you wanted a random alpha, just create another
         // random number for that too.
-        return UIColor(red:   .random() - (hue: 0.1),
-                       green: .random() - (hue: 0.0),
-                       blue:  .random() - (hue: 0.4),
+        return UIColor(red:   .random(),
+                       green: .random(),
+                       blue:  .random(),
                        alpha: 1.0)
     }
 }

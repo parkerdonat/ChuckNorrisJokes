@@ -39,11 +39,13 @@ class ViewController: UIViewController {
         
         isLightColor()
         
-        if isLight == false {
-            chuckTitle.textColor = .whiteColor()
-        } else {
-            chuckTitle.textColor = .blackColor()
-        }
+//        if isLight == false {
+//            chuckTitle.textColor = .whiteColor()
+//            funFactLabel.textColor = .whiteColor()
+//        } else {
+//            chuckTitle.textColor = .blackColor()
+//            funFactLabel.textColor = .blackColor()
+//        }
     }
     
     func isLightColor() {
@@ -52,16 +54,18 @@ class ViewController: UIViewController {
         
         let componentColors = CGColorGetComponents(color!.CGColor)
         
-        let colorBrightness: CGFloat = ((componentColors[0] * 299) + (componentColors[1] * 587) + (componentColors[2] * 114)) / 1000;
+        let colorBrightness: CGFloat = ((componentColors[0] * 299) + (componentColors[1] * 587) + (componentColors[2] * 114)) / 1000
         
         if (colorBrightness >= 0.5) {
             isLight = true
             NSLog("Background color is light \(colorBrightness)")
             chuckTitle.textColor = .blackColor()
+            funFactLabel.textColor = .blackColor()
         } else {
             isLight = false
             NSLog("Background color is dark \(colorBrightness)")
             chuckTitle.textColor = .whiteColor()
+            funFactLabel.textColor = .whiteColor()
         }  
     }
 }
