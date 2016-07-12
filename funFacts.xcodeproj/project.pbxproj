@@ -14,6 +14,9 @@
 		DD90B3B41C59D4AB008B21EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD90B3B21C59D4AB008B21EE /* Main.storyboard */; };
 		DD90B3B61C59D4AB008B21EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD90B3B51C59D4AB008B21EE /* Assets.xcassets */; };
 		DD90B3B91C59D4AB008B21EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD90B3B71C59D4AB008B21EE /* LaunchScreen.storyboard */; };
+		DDDF19AF1D344A39001A45A5 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDF19AE1D344A39001A45A5 /* RoundButton.swift */; };
+		DDDF19B31D3455A9001A45A5 /* Adventure.otf in Resources */ = {isa = PBXBuildFile; fileRef = DDDF19B21D3455A9001A45A5 /* Adventure.otf */; };
+		DDDF19B51D345BD7001A45A5 /* Adventure Hollow.otf in Resources */ = {isa = PBXBuildFile; fileRef = DDDF19B41D345BD7001A45A5 /* Adventure Hollow.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		DD90B3B51C59D4AB008B21EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD90B3B81C59D4AB008B21EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD90B3BA1C59D4AB008B21EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDDF19AE1D344A39001A45A5 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		DDDF19B21D3455A9001A45A5 /* Adventure.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Adventure.otf; sourceTree = "<group>"; };
+		DDDF19B41D345BD7001A45A5 /* Adventure Hollow.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Adventure Hollow.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +68,11 @@
 				DD90B3B01C59D4AB008B21EE /* ViewController.swift */,
 				DD2E80121C5B00840059C0E5 /* ColorModel.swift */,
 				DD0079861D2C712700E00051 /* ChuckModel.swift */,
+				DDDF19AE1D344A39001A45A5 /* RoundButton.swift */,
 				DD90B3B21C59D4AB008B21EE /* Main.storyboard */,
 				DD90B3B51C59D4AB008B21EE /* Assets.xcassets */,
+				DDDF19B21D3455A9001A45A5 /* Adventure.otf */,
+				DDDF19B41D345BD7001A45A5 /* Adventure Hollow.otf */,
 				DD90B3B71C59D4AB008B21EE /* LaunchScreen.storyboard */,
 				DD90B3BA1C59D4AB008B21EE /* Info.plist */,
 			);
@@ -130,7 +139,9 @@
 			files = (
 				DD90B3B91C59D4AB008B21EE /* LaunchScreen.storyboard in Resources */,
 				DD90B3B61C59D4AB008B21EE /* Assets.xcassets in Resources */,
+				DDDF19B31D3455A9001A45A5 /* Adventure.otf in Resources */,
 				DD90B3B41C59D4AB008B21EE /* Main.storyboard in Resources */,
+				DDDF19B51D345BD7001A45A5 /* Adventure Hollow.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD90B3B11C59D4AB008B21EE /* ViewController.swift in Sources */,
+				DDDF19AF1D344A39001A45A5 /* RoundButton.swift in Sources */,
 				DD90B3AF1C59D4AB008B21EE /* AppDelegate.swift in Sources */,
 				DD0079871D2C712700E00051 /* ChuckModel.swift in Sources */,
 				DD2E80131C5B00840059C0E5 /* ColorModel.swift in Sources */,

@@ -235,7 +235,7 @@ struct ChuckModel {
         "Chuck Norris once killed 37 terrorists with only 2 bullets....the first bullet was a warning shot.",
         "Chuck Norris flew his first paper airplane when he was 4 years old. It landed yesterday.",
         "When Chuck Norris was asked if he believed that the world was going to end in 2016 he resonded: 'Depends how I'm feeling that day.'",
-        "Chuck Norris once bowled a perfect game.....with a golf ball.",
+        "Chuck Norris once bowled a perfect game... with a golf ball.",
         "The phrase 'break a leg' was originally coined by Chuck Norris's co-stars in Walker, Texas Ranger as a good luck charm, indicating that a broken leg might be the worst extent of their injuries. This never proved to be the case.",
         "Chuck Norris has to use a stunt double when he does crying scenes.",
         "Some kids pee their name in snow. Chuck Norris pees his name in concrete.",
@@ -417,7 +417,7 @@ struct ChuckModel {
         "Chuck Norris had to stop washing his clothes in the ocean. The tsunamis were killing people.",
         "A man once taunted Chuck Norris with a bag of Lay's potato chips, saying 'Betcha can't eat just one!' Chuck Norris proceeded to eat the chips, the bag, and the man in one deft move.",
         "In the first Jurassic Park movie, the Tyrannosaurus Rex wasn't chasing the jeep. Chuck Norris was chasing the Tyrannosaurus AND the jeep.",
-        "Rules of fighting: 1) Don't bring a knife to a gun fight. 2) Don't bring a gun to a Chuck Norris fight.",
+        "Rules of fighting: #1 Don't bring a knife to a gun fight. #2 Don't bring a gun to a Chuck Norris fight.",
         "Chuck Norris is the only man who has, literally, beaten the odds. With his fists.",
         "When you play Monopoly with Chuck Norris, you do not pass go, and you do not collect two hundred dollars. You will be lucky if you make it out alive.",
         "Chuck Norris likes his ice like he likes his skulls: crushed.",
@@ -463,7 +463,7 @@ struct ChuckModel {
         "If you flipped over China it says made by Chuck Norris."
     ]
     
-    func getRandomJoke() ->String {
+    func getRandomJoke() -> String {
         let randomGenerator = GKRandomSource.sharedRandom().nextIntWithUpperBound(chuckJokes.count)
         
         return chuckJokes[randomGenerator]
