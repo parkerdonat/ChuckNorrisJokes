@@ -17,6 +17,7 @@
 		DDDF19AF1D344A39001A45A5 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDF19AE1D344A39001A45A5 /* RoundButton.swift */; };
 		DDDF19B31D3455A9001A45A5 /* Adventure.otf in Resources */ = {isa = PBXBuildFile; fileRef = DDDF19B21D3455A9001A45A5 /* Adventure.otf */; };
 		DDDF19B51D345BD7001A45A5 /* Adventure Hollow.otf in Resources */ = {isa = PBXBuildFile; fileRef = DDDF19B41D345BD7001A45A5 /* Adventure Hollow.otf */; };
+		DDDF19B71D35B797001A45A5 /* punch.wav in Resources */ = {isa = PBXBuildFile; fileRef = DDDF19B61D35B797001A45A5 /* punch.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		DDDF19AE1D344A39001A45A5 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		DDDF19B21D3455A9001A45A5 /* Adventure.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Adventure.otf; sourceTree = "<group>"; };
 		DDDF19B41D345BD7001A45A5 /* Adventure Hollow.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Adventure Hollow.otf"; sourceTree = "<group>"; };
+		DDDF19B61D35B797001A45A5 /* punch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = punch.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				DDDF19AE1D344A39001A45A5 /* RoundButton.swift */,
 				DD90B3B21C59D4AB008B21EE /* Main.storyboard */,
 				DD90B3B51C59D4AB008B21EE /* Assets.xcassets */,
+				DDDF19B61D35B797001A45A5 /* punch.wav */,
 				DDDF19B21D3455A9001A45A5 /* Adventure.otf */,
 				DDDF19B41D345BD7001A45A5 /* Adventure Hollow.otf */,
 				DD90B3B71C59D4AB008B21EE /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD90B3B91C59D4AB008B21EE /* LaunchScreen.storyboard in Resources */,
+				DDDF19B71D35B797001A45A5 /* punch.wav in Resources */,
 				DD90B3B61C59D4AB008B21EE /* Assets.xcassets in Resources */,
 				DDDF19B31D3455A9001A45A5 /* Adventure.otf in Resources */,
 				DD90B3B41C59D4AB008B21EE /* Main.storyboard in Resources */,
