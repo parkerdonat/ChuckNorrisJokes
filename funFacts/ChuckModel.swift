@@ -11,6 +11,18 @@ import GameKit
 struct ChuckModel {
     let chuckJokes = [
         
+        "Chuck Norris does not sleep; he waits.",
+        "When Chuck Norris works out he doesn't get stronger, the machine does.",
+        "If you see Chuck Norris crying he will grant you a wish, if your wish is dying.",
+        "Chuck Norris wears sunglasses so his eyes won't hurt the sun.",
+        "Chuck Norris doesn't breathe air. He holds air hostage.",
+        "When Chuck Norris swims in the ocean, the sharks are in a steel cage.",
+        "When Chuck Norris turned 18, his parents moved out.",
+        "If Chuck Norris was a Spartan in the movie 300, the movie would be called 1.",
+        "Chuck Norris is currently suing NBC, claiming Law and Order are trademarked names for his left and right legs.",
+        "The easiest way to determine Chuck Norris's age is to cut him in half and count the rings.",
+        "He who laughs last, laughs best. He who laughs at Chuck Norris, it's definitely his last laugh.",
+        "Chuck Norris doesn’t need a weapon. He is one.",
         "There is only one way to determine if Chuck Norris likes you... Are you still alive to read this?",
         "Chuck Norris killed Bin Laden before the SEALs got there.",
         "When the mother of Chuck Norris was pregnant she could feel him moving in her stomache. Little did she know, he was perfecting his Round House Kick.",
@@ -213,7 +225,7 @@ struct ChuckModel {
         "Chuck Norris was born on May 6, 1945. Nazi Germany surrendered May 7, 1945. Coincidence? I think not.",
         "Chuck Norris doesnt wear a watch, HE decides what time it is.",
         "There used to be a street named after Chuck Norris, but it was changed because nobody crosses Chuck Norris and lives.",
-        "Chuck Norris has already been to Mars; that's why there are no signs of life.",
+        "Chuck Norris has already been to Mars. That's why there are no signs of life.",
         "Chuck Norris and Superman once fought each other on a bet. The loser had to start wearing his underwear on the outside of his pants.",
         "Some magicans can walk on water, Chuck Norris can swim through land.",
         "Chuck Norris counted to infinity - twice.",
