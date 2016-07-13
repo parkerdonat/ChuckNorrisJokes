@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     let chuckModel = ChuckModel()
     var isLight = false
     var punchSound: AVAudioPlayer!
+    var buttonTapCounts: Int = 0
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +48,7 @@ class ViewController: UIViewController {
         isLightColor()
         punchAnimation()
         playPunchSound()
+        buttonTapCounts += 1
     }
     
     func isLightColor() {
@@ -72,26 +75,27 @@ class ViewController: UIViewController {
     func punchAnimation() {
         
         punchImage.hidden = false
+        funFactLabel.hidden = true
+        funFactButton.userInteractionEnabled = false
         self.punchImage.alpha = 1.0
         punchImage.frame = CGRect(x: 250, y: 250, width: 0, height: 0)
         
-        let rotationTransform = CGAffineTransformMakeRotation(CGFloat(0.5))
-        let scaleTransform = CGAffineTransformMakeScale(13, 13)
+        let scaleTransform1 = CGAffineTransformMakeScale(50, 50)
+        let scaleTransform2 = CGAffineTransformMakeScale(1, 1)
         
-        UIView.animateWithDuration(0.15, delay: 0.0, options: [.CurveEaseIn, .Autoreverse], animations: {
-            
-            self.punchImage.transform = CGAffineTransformConcat(rotationTransform, scaleTransform)
+        UIView.animateWithDuration(0.5, animations: {
+            self.punchImage.transform = CGAffineTransformConcat(scaleTransform1, scaleTransform2)
             self.punchImage.frame = CGRect(x: 0, y: 100, width: 500, height: 350)
-            self.punchImage.alpha = 0
-            
+            self.punchImage.transform = CGAffineTransformIdentity
         }) { (_) in
             self.punchImage.hidden = true
+            self.funFactLabel.hidden = false
+            self.funFactButton.userInteractionEnabled = true
         }
-        
     }
     
     func playPunchSound() {
-        let path = NSBundle.mainBundle().pathForResource("punch.wav", ofType:nil)!
+        let path = NSBundle.mainBundle().pathForResource("punch_edit.mp3", ofType:nil)!
         let url = NSURL(fileURLWithPath: path)
         
         do {
