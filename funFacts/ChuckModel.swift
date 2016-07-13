@@ -11,6 +11,9 @@ import GameKit
 struct ChuckModel {
     let chuckJokes = [
         
+        "Contrary to popular belief, America is not a democracy, it is a Chucktatorship.",
+        "Chuck Norris does not get frostbite. Chuck Norris bites frost.",
+        "Chuck Norris can spit through bulletproof glass.",
         "Chuck Norris does not sleep; he waits.",
         "When Chuck Norris works out he doesn't get stronger, the machine does.",
         "If you see Chuck Norris crying he will grant you a wish, if your wish is dying.",
@@ -201,7 +204,6 @@ struct ChuckModel {
         "Chuck Norris is the reason why Waldo is hiding.",
         "Chuck Norris does not eat. Food understands that the only safe haven from Chuck Norris' fists is inside his own body.",
         "Chuck Norris built a time machine and went back in time to stop the JFK assassination. As Oswald shot, Chuck met all three bullets with his beard, deflecting them. JFK's head exploded out of sheer amazement.",
-        "Chuck Norris doesn't read books. He stares them down until he gets the information he wants.",
         "Chuck Norris uses a night light. Not because Chuck Norris is afraid of the dark, but the dark is afraid of Chuck Norris.",
         "When Bruce Banner gets mad, he turns into the Hulk. When the Hulk gets mad, he turns into Chuck Norris.",
         "Chuck Norris kills anyone that asks: 'Do you want fries with that?'. Because by now everyone should know that Chuck doesn't want fries with anything. Ever.",
@@ -473,7 +475,10 @@ struct ChuckModel {
         "Chuck Norris can strangle you with a cordless phone.",
         "Alcohol has a Chuck Norris problem.",
         "If you flipped over China it says made by Chuck Norris.",
-        "What is Chuck Norris' favorite color? Red of course."
+        "What is Chuck Norris' favorite color? Red of course.",
+        "A meteor did not kill the dinosaurs, Chuck Norris just went on a hunting trip.",
+        "Chuck Norris doesn't fall, he attracts the earth to him.",
+        "Chuck Norris can download the whole internet onto a floppy disk."
     ]
     
     func getRandomJoke() -> String {
