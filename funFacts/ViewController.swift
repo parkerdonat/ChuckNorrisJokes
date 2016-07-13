@@ -26,6 +26,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         isLightColor()
         funFactLabel.text = chuckModel.getRandomJoke()
+        
+        
     }
     
     override func viewDidLayoutSubviews() {
