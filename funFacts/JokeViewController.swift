@@ -8,36 +8,51 @@
 
 import UIKit
 import AVFoundation
+import AudioToolbox
 
-class ViewController: UIViewController {
+class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
     var colorModel = ColorModel()
     
     @IBOutlet weak var funFactLabel: UILabel!
     @IBOutlet weak var funFactButton: UIButton!
-    @IBOutlet weak var chuckTitle: UILabel!
     @IBOutlet weak var punchImage: UIImageView!
+    @IBOutlet weak var chuckTitle: UIButton!
+    
     let chuckModel = ChuckModel()
     var isLight = false
     var punchSound: AVAudioPlayer!
-    var buttonTapCounts: Int = 0
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         isLightColor()
         funFactLabel.text = chuckModel.getRandomJoke()
         
-        
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func chuckTitleAnimation(sender: AnyObject) {
+        
+        chuckTitle.transform = CGAffineTransformMakeScale(0.1, 0.1)
+        
+        UIView.animateWithDuration(2.0,
+                                   delay: 0,
+                                   usingSpringWithDamping: 0.2,
+                                   initialSpringVelocity: 6.0,
+                                   options: UIViewAnimationOptions.AllowUserInteraction,
+                                   animations: {
+                                    self.chuckTitle.transform = CGAffineTransformIdentity
+            }, completion: nil)
+    }
+    
+    @IBAction func shareButtonTapped(sender: AnyObject) {
+        if let text = funFactLabel.text {
+            let share = UIActivityViewController(activityItems: [text], applicationActivities: nil)
+            presentViewController(share, animated: true, completion: nil)
+        }
     }
     
     @IBAction func showFunFact() {
@@ -50,7 +65,7 @@ class ViewController: UIViewController {
         isLightColor()
         punchAnimation()
         playPunchSound()
-        buttonTapCounts += 1
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
     
     func isLightColor() {
@@ -64,12 +79,12 @@ class ViewController: UIViewController {
         if (colorBrightness >= 0.5) {
             isLight = true
             NSLog("Background color is light \(colorBrightness)")
-            chuckTitle.textColor = .blackColor()
+            chuckTitle.titleLabel!.textColor = .blackColor()
             funFactLabel.textColor = .blackColor()
         } else {
             isLight = false
             NSLog("Background color is dark \(colorBrightness)")
-            chuckTitle.textColor = .whiteColor()
+            chuckTitle.titleLabel!.textColor = .whiteColor()
             funFactLabel.textColor = .whiteColor()
         }
     }
@@ -105,7 +120,7 @@ class ViewController: UIViewController {
             punchSound = sound
             sound.play()
         } catch {
-            // couldn't load file :(
+            print("Couldn't load file :(")
         }
     }
 }

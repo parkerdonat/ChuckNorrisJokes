@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vwk-ZD-cBo">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -13,10 +13,10 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="funFacts" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="BYZ-38-t0r" userLabel="Home" customClass="JokeViewController" customModule="funFacts" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -25,7 +25,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbO-h6-PPs">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbO-h6-PPs">
                                 <rect key="frame" x="40" y="237" width="520" height="126"/>
                                 <string key="text">Fact: An adult has 206 bones in their body but when Chuck Norris hits you with a roundhouse kick to the face you'll have 3,000,000 bones. Also, fact.   </string>
                                 <fontDescription key="fontDescription" name="Adventure" family="Adventure" pointSize="25"/>
@@ -40,7 +40,7 @@
                                     <constraint firstAttribute="width" secondItem="9oC-PD-jP7" secondAttribute="height" multiplier="1:1" id="Yst-aj-0Jx"/>
                                     <constraint firstAttribute="height" constant="100" id="co7-wG-Irt"/>
                                 </constraints>
-                                <state key="normal" image="chuck_stensil_small">
+                                <state key="normal" image="dice_black100">
                                     <color key="titleColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -55,21 +55,24 @@
                                     <action selector="showFunFact" destination="BYZ-38-t0r" eventType="touchUpInside" id="42F-NN-h49"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chuck Norris Jokes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8f-8I-DxA">
-                                <rect key="frame" x="0.0" y="54" width="600" height="54"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIl-4h-YX2">
+                                <rect key="frame" x="20" y="36" width="560" height="79"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="Ao9-Wv-YmW"/>
-                                    <constraint firstAttribute="width" constant="600" id="pnN-Rz-MaT"/>
+                                    <constraint firstAttribute="height" constant="79" id="ZMB-fp-NyC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Adventure" family="Adventure" pointSize="37"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="0.0" height="0.0"/>
-                            </label>
+                                <fontDescription key="fontDescription" name="Adventure" family="Adventure" pointSize="32"/>
+                                <state key="normal" title="Chuck Norris Jokes">
+                                    <color key="titleColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
+                                </state>
+                                <connections>
+                                    <action selector="chuckTitleAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F3U-eF-2pO"/>
+                                </connections>
+                            </button>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="punch_image" translatesAutoresizingMaskIntoConstraints="NO" id="anh-Cs-d6B">
-                                <rect key="frame" x="269" y="278" width="63" height="44"/>
+                                <rect key="frame" x="270" y="279" width="60" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="clG-ZO-0Zb"/>
-                                    <constraint firstAttribute="width" constant="63" id="jgx-ht-pHE"/>
+                                    <constraint firstAttribute="height" constant="42" id="clG-ZO-0Zb"/>
+                                    <constraint firstAttribute="width" constant="60" id="jgx-ht-pHE"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -77,24 +80,19 @@
                         <constraints>
                             <constraint firstItem="nbO-h6-PPs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="3jz-2m-pSK"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nbO-h6-PPs" secondAttribute="trailing" constant="20" id="4uz-XI-vhO"/>
-                            <constraint firstItem="nbO-h6-PPs" firstAttribute="top" secondItem="m8f-8I-DxA" secondAttribute="bottom" constant="120" id="U0U-1u-tYd"/>
+                            <constraint firstItem="kIl-4h-YX2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-28" id="IiS-eT-KlC"/>
                             <constraint firstItem="anh-Cs-d6B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V8J-QN-T3m"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9oC-PD-jP7" secondAttribute="bottom" constant="20" id="XZd-az-H9B"/>
-                            <constraint firstItem="nbO-h6-PPs" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YjW-AZ-4Mh"/>
-                            <constraint firstItem="m8f-8I-DxA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="d0I-Vx-4TF"/>
-                            <constraint firstItem="m8f-8I-DxA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="34" id="p9x-BI-nAP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="m8f-8I-DxA" secondAttribute="trailing" constant="-20" id="qpq-Qt-Zhj"/>
+                            <constraint firstItem="nbO-h6-PPs" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-25" id="YjW-AZ-4Mh"/>
+                            <constraint firstItem="kIl-4h-YX2" firstAttribute="centerX" secondItem="anh-Cs-d6B" secondAttribute="centerX" id="lXi-N6-6rQ"/>
                             <constraint firstItem="9oC-PD-jP7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t0z-Fy-nBK"/>
                             <constraint firstItem="anh-Cs-d6B" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vur-d8-RUG"/>
+                            <constraint firstItem="kIl-4h-YX2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="wD0-Jk-4ZK"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="U0U-1u-tYd"/>
-                            </mask>
-                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Random Jokes" id="jl3-Ze-SlH"/>
                     <connections>
-                        <outlet property="chuckTitle" destination="m8f-8I-DxA" id="qHg-K3-X1x"/>
+                        <outlet property="chuckTitle" destination="kIl-4h-YX2" id="r9M-gd-mnW"/>
                         <outlet property="funFactButton" destination="9oC-PD-jP7" id="dUN-0h-9dt"/>
                         <outlet property="funFactLabel" destination="nbO-h6-PPs" id="62S-CL-JO4"/>
                         <outlet property="punchImage" destination="anh-Cs-d6B" id="BQt-O5-6cg"/>
@@ -102,11 +100,81 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="340" y="342"/>
+            <point key="canvasLocation" x="2776" y="342"/>
+        </scene>
+        <!--Favorite Jokes-->
+        <scene sceneID="8ps-DJ-kUZ">
+            <objects>
+                <tableViewController id="MM1-Me-Q66" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="AS1-wh-20z">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="chuck" id="MHv-Mp-f6S">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MHv-Mp-f6S" id="76J-sL-m2c">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="MM1-Me-Q66" id="dTC-bx-JYb"/>
+                            <outlet property="delegate" destination="MM1-Me-Q66" id="9tL-4y-Ndr"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Favorite Jokes" prompt="Tap to view your" id="Mpx-1M-W40"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DS4-2u-Pcp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3451" y="342"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="EPF-Qc-ztt">
+            <objects>
+                <viewController id="dHE-Sr-P7O" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I5C-v8-Gwi"/>
+                        <viewControllerLayoutGuide type="bottom" id="hTW-Gd-nRn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3yt-oe-DYJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mbG-ks-ZVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2776" y="1126"/>
+        </scene>
+        <!--Nav Controller-->
+        <scene sceneID="o4Z-6u-D5r">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="md2-tg-8xL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vwk-ZD-cBo" userLabel="Nav Controller" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Share" id="8A5-Y5-GVL"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="As3-AO-MU5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ale-sb-yCQ">
+                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wj5-4M-6bj"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="2094" y="342"/>
         </scene>
     </scenes>
     <resources>
-        <image name="chuck_stensil_small" width="80" height="86"/>
+        <image name="dice_black100" width="100" height="100"/>
         <image name="punch_image" width="250" height="175"/>
     </resources>
 </document>

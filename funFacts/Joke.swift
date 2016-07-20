@@ -8,9 +8,38 @@
 
 import GameKit
 
+class Joke: Equatable {
+    
+    private let kJoke = "Joke"
+    
+    var text: String
+    
+    var dictionaryCopy: [String: AnyObject] {
+        return [kJoke: text]
+    }
+    
+    init(joke: String) {
+        self.text = joke
+    }
+    
+    init?(dictionary: [String: AnyObject]) {
+        guard let  jokeDictionary = dictionary[kJoke] as? String else { return nil }
+    
+        self.text = jokeDictionary
+    }
+}
+
+func ==(lhs: Joke, rhs: Joke) -> Bool {
+    
+    return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
+}
+
 struct ChuckModel {
     let chuckJokes = [
         
+        "That's not an eclipse. It’s the sun hiding from Chuck Norris.",
+        "Ghosts sit around the campfire and tell Chuck Norris stories.",
+        "They wanted to put Chuck Norris' face on Mount Rushmore but the granite wasn't strong enough for his beard.",
         "Contrary to popular belief, America is not a democracy, it is a Chucktatorship.",
         "Chuck Norris does not get frostbite. Chuck Norris bites frost.",
         "Chuck Norris can spit through bulletproof glass.",
@@ -47,7 +76,7 @@ struct ChuckModel {
         "Chuck Norris doesn't shower, he only takes blood baths.",
         "Time waits for no man. Unless that man is Chuck Norris.",
         "Chuck Norris can hit you so hard that he can actually alter your DNA. Decades from now your descendants will occasionally clutch their heads and yell 'What The Hell was That?'.",
-        "Chuck Norris is the only human being to display the Heisenberg uncertainty principle - you can never know both exactly where and how quickly he will roundhouse kick you in the face.",
+        "Chuck Norris is the only human being to display the Heisenberg uncertainty principle... you can never know both exactly where and how quickly he will roundhouse kick you in the face.",
         "Faster than a speeding bullet... More powerful than a locomotive... Able to leap tall buildings in a single bound... These are some of Chuck Norris's warm-up exercises.",
         "Chuck Norris is not hung like a horse. Horses are hung like Chuck Norris.",
         "Teenage Mutant Ninja Turtles is based on a true story: Chuck Norris once swallowed a turtle whole, and when he crapped it out, the turtle was six feet tall and had learned karate.",
@@ -63,7 +92,7 @@ struct ChuckModel {
         "A handicapped parking sign does not signify that this spot is for handicapped people. It is actually in fact a warning, that the spot belongs to Chuck Norris and that you will be handicapped if you park there.",
         "Chuck Norris doesn't wash his clothes. He disembowels them.",
         "Chuck Norris doesn't churn butter. He roundhouse kicks the cows and the butter comes straight out.",
-        "Police label anyone attacking Chuck Norris as a Code 45-11... A suicide.",
+        "Police label anyone attacking Chuck Norris as a Code 45-11... a suicide.",
         "Chuck Norris is the only man to ever defeat a brick wall in a game of tennis.",
         "What was going through the minds of all of Chuck Norris' victims before they died? His shoe.",
         "There is no theory of evolution, just a list of creatures Chuck Norris allows to live.",
@@ -188,7 +217,7 @@ struct ChuckModel {
         "Chuck Norris destroyed the periodic table, because Chuck Norris only recognizes the element of surprise.",
         "It is believed dinosaurs are extinct due to a giant meteor. That's true if you want to call Chuck Norris a giant meteor.",
         "Chuck Norris shot the sheriff, but he roundhouse kicked the deputy.",
-        "That's not Chuck Norris doing push-ups -- that's Chuck Norris moving the Earth away from the path of a deadly asteroid.",
+        "That's not Chuck Norris doing push-ups... that's Chuck Norris moving the Earth away from the path of a deadly asteroid.",
         "Chuck Norris can judge a book by its cover.",
         "Nothing can escape the gravity of a black hole, except for Chuck Norris. Chuck Norris eats black holes. They taste like chicken.",
         "How many Chuck Norris' does it take to change a light bulb? None, Chuck Norris prefers to kill in the dark.",
@@ -230,15 +259,15 @@ struct ChuckModel {
         "Chuck Norris has already been to Mars. That's why there are no signs of life.",
         "Chuck Norris and Superman once fought each other on a bet. The loser had to start wearing his underwear on the outside of his pants.",
         "Some magicans can walk on water, Chuck Norris can swim through land.",
-        "Chuck Norris counted to infinity - twice.",
+        "Chuck Norris counted to infinity. Twice.",
         "Fear of spiders is aracnaphobia, fear of tight spaces is chlaustraphobia, fear of Chuck Norris is called Logic.",
         "Death once had a near-Chuck Norris experience.",
         "Chuck Norris once urinated in a semi truck's gas tank as a joke... that truck is now known as Optimus Prime.",
-        "Chuck Norris once got bit by a rattle snake... After three days of pain and agony ...the rattle snake died.",
+        "Chuck Norris once got bit by a rattle snake. After three days of pain and agony... the rattle snake died.",
         "Chuck Norris can cut through a hot knife with butter.",
         "There is no theory of evolution. Just a list of animals Chuck Norris allows to live.",
         "Chuck Norris made a Happy Meal cry.",
-        "Chuck Norris doesn't use Facebook or Twitter... he's already following you.",
+        "Chuck Norris doesn't use Facebook, Twitter, or Instagram... he's already following you.",
         "Chuck Norris can hear sign language.",
         "Every time Chuck Norris looks into a mirror it breaks. Even glass is not stupid enough to get between Chuck Norris and Chuck Norris.",
         "Chuck Norris has an Xbox Live account. On Playstation.",
@@ -251,7 +280,7 @@ struct ChuckModel {
         "When Chuck Norris was asked if he believed that the world was going to end in 2016 he resonded: 'Depends how I'm feeling that day.'",
         "Chuck Norris once bowled a perfect game... with a golf ball.",
         "The phrase 'break a leg' was originally coined by Chuck Norris's co-stars in Walker, Texas Ranger as a good luck charm, indicating that a broken leg might be the worst extent of their injuries. This never proved to be the case.",
-        "Chuck Norris has to use a stunt double when he does crying scenes.",
+        "Chuck Norris only uses stunt doubles for crying scenes.",
         "Some kids pee their name in snow. Chuck Norris pees his name in concrete.",
         "Dana White has never offered Chuck Norris a UFC contract out of concern for the well being of his fighters.",
         "Chuck Norris' hands are protected under the 2nd Amendment.",
@@ -312,7 +341,6 @@ struct ChuckModel {
         "Chuck refers to himself in the fourth person.",
         "Chuck actually died four years ago, but the Grim Reaper can't get up the courage to tell him.",
         "Chuck Norris does not submit to homeland security, he IS homeland security.",
-        "Chuck Norris once bowled a perfect game with a marble.",
         "Chuck Norris's computer has no 'backspace' button, Chuck Norris doesn't make mistakes.",
         "Jack was nimble, Jack was quick, but Jack still couldn't dodge Chuck Norris' roundhouse kick.",
         "Chuck Norris is the only person on the planet that can kick you in the back of the face.",
@@ -349,7 +377,7 @@ struct ChuckModel {
         "The First Law of Thermodynamics states that energy can neither be created nor destroyed... unless it meets Chuck Norris.",
         "Chuck Norris doesn't go on the internet, he has every internet site stored in his memory. He refreshes webpages by blinking.",
         "It is said that looking into Chuck Norris' eyes will reveal your future. Unfortunately, everybody's future is always the same: death by a roundhouse kick to the face.",
-        "Chuck Norris knows everything there is to know... Except for the definition of mercy.",
+        "Chuck Norris knows everything there is to know... except for the definition of mercy.",
         "Scientifically speaking, it is impossible to charge Chuck Norris with 'obstruction of justice.' This is because even Chuck Norris cannot be in two places at the same time.",
         "Chuck Norris never has to wax his skis because they're always slick with blood.",
         "When you say 'no one's perfect', Chuck Norris takes this as a personal insult.",
@@ -406,7 +434,6 @@ struct ChuckModel {
         "Chuck Norris does not follow fashion trends, they follow him. But then he turns around and kicks their @ss. So nobody follows Chuck Norris.",
         "Diamonds are not, despite popular belief, carbon. They are, in fact, Chuck Norris fecal matter. This was proven a recently, when scientific analysis revealed what appeared to be Jean-Claude Van Damme bone fragments inside the Hope Diamond.",
         "Chuck Norris once participated in the running of the bulls. He walked.",
-        "Chuck Norris was the original sculptor of Mount Rushmore. He completed the entire project using only a bottle opener and a drywall trowel.",
         "The Manhattan Project was not intended to create nuclear weapons, it was meant to recreate the destructive power in a Chuck Norris Roundhouse Kick. They didn't even come close.",
         "Chuck Norris has banned rainbows from the state of North Dakota.",
         "Chuck Norris runs on batteries. Specifically, Die Hards.",
@@ -424,7 +451,7 @@ struct ChuckModel {
         "The air around Chuck Norris is always a balmy 78 degrees.",
         "When Chuck Norris wants an egg, he cracks open a chicken.",
         "Chuck Norris plays racquetball with a waffle iron and a bowling ball.",
-        "Count from one to ten. That's how long it would take Chuck Norris to kill you...Fourty seven times.",
+        "Count from one to ten. That's how long it would take Chuck Norris to kill you...fourty seven times.",
         "The 1972 Miami Dolphins lost one game, it was a game vs. Chuck Norris and three seven year old girls. Chuck Norris won with a roundhouse kick to the face in overtime.",
         "Chuck Norris is not Politically Correct. He is just Correct. Always.",
         "Mr. T pities the fool. Chuck Norris rips the fool's head off.",
@@ -445,7 +472,6 @@ struct ChuckModel {
         "Chuck Norris doesn't need a debugger, he just stares down the bug until the code confesses.",
         "Chuck Norris' Internet connection is faster upstream than downstream because even data has more incentive to run from him than to him.",
         "If Chuck Norris writes code with bugs, the bugs fix themselves.",
-        "Chuck Norris eats lightning and sh*ts out thunder.",
         "No one has ever pair-programmed with Chuck Norris and lived to tell about it.",
         "No one has ever spoken during review of Chuck Norris' code and lived to tell about it.",
         "Chuck Norris finished World of Warcraft.",
@@ -455,7 +481,7 @@ struct ChuckModel {
         "Chuck Norris can install a 64 bit OS on 32 bit machines.",
         "Chuck Norris doesn't need an account. He just logs in.",
         "Code runs faster when Chuck Norris watches it.",
-        "Chuck Norris doesn’t win, he allows you to loose.",
+        "Chuck Norris doesn’t win, he allows you to lose.",
         "Chuck Norris told the Most Interesting Man in the World that he can only drink Dos Equis.",
         "There is no chin under Chuck Norris’ beard… just another fist.",
         "Tornados occur when Chuck Norris sneezes.",
@@ -466,7 +492,7 @@ struct ChuckModel {
         "Chuck Norris’s dog pick’s up his own sh*t because Chuck Norris doesn't take sh*t from anyone.",
         "Chuck Norris can sneeze with his eyes open.",
         "When Alexander Bell invented the telephone he had 3 missed calls from Chuck Norris.",
-        "Chuck Norris counted to infinity – Twice.",
+        "Chuck Norris counted to infinity. Twice.",
         "Chuck Norris doesn't flush the toilet, he scares the sh*t out of it.",
         "Chuck Norris gives the sun cancer.",
         "Chuck Norris can light a fire by rubbing two ice-cubes together.",
