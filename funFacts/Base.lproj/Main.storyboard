@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vwk-ZD-cBo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="k00-nX-xLu">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -25,13 +25,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbO-h6-PPs">
-                                <rect key="frame" x="40" y="237" width="520" height="126"/>
-                                <string key="text">Fact: An adult has 206 bones in their body but when Chuck Norris hits you with a roundhouse kick to the face you'll have 3,000,000 bones. Also, fact.   </string>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbO-h6-PPs">
+                                <rect key="frame" x="40" y="189" width="520" height="221"/>
+                                <string key="text">Fact: An adult has 206 bones in their body but when Chuck Norris hits you with a roundhouse kick to the face you'll have 3,000,000 bones. Also, fact. Fact: An adult has 206 bones in their body but when Chuck Norris hits you with a roundhouse kick to the face you'll have 3,000,000 bones. Also, fact.   </string>
                                 <fontDescription key="fontDescription" name="Adventure" family="Adventure" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="punch_image" translatesAutoresizingMaskIntoConstraints="NO" id="anh-Cs-d6B">
+                                <rect key="frame" x="270" y="279" width="60" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="clG-ZO-0Zb"/>
+                                    <constraint firstAttribute="width" constant="60" id="jgx-ht-pHE"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oC-PD-jP7" customClass="RoundButton" customModule="funFacts" customModuleProvider="target">
                                 <rect key="frame" x="250" y="480" width="100" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -55,54 +63,72 @@
                                     <action selector="showFunFact" destination="BYZ-38-t0r" eventType="touchUpInside" id="42F-NN-h49"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIl-4h-YX2">
-                                <rect key="frame" x="20" y="36" width="560" height="79"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIl-4h-YX2">
+                                <rect key="frame" x="20" y="83" width="560" height="31"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="79" id="ZMB-fp-NyC"/>
+                                    <constraint firstAttribute="height" constant="31" id="ZMB-fp-NyC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Adventure" family="Adventure" pointSize="32"/>
-                                <state key="normal" title="Chuck Norris Jokes">
-                                    <color key="titleColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
+                                <fontDescription key="fontDescription" name="Adventure" family="Adventure" pointSize="28"/>
+                                <state key="normal" title="Random Chuck Facts">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="chuckTitleAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F3U-eF-2pO"/>
                                 </connections>
                             </button>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="punch_image" translatesAutoresizingMaskIntoConstraints="NO" id="anh-Cs-d6B">
-                                <rect key="frame" x="270" y="279" width="60" height="42"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yUe-YU-qwt" userLabel="list">
+                                <rect key="frame" x="40" y="515" width="44" height="44"/>
+                                <state key="normal" image="favorite_list_white"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYo-5g-QUS" userLabel="settings">
+                                <rect key="frame" x="516" y="515" width="44" height="44"/>
+                                <state key="normal" image="settings_white"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ntK-n1-LeU">
+                                <rect key="frame" x="40" y="115" width="520" height="2"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="clG-ZO-0Zb"/>
-                                    <constraint firstAttribute="width" constant="60" id="jgx-ht-pHE"/>
+                                    <constraint firstAttribute="height" constant="2" id="I0W-8L-w8I"/>
                                 </constraints>
-                            </imageView>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.3529411764705882" green="0.73333333333333328" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.73333333333333328" green="0.19502466340416416" blue="0.18867820255787213" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="nbO-h6-PPs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="3jz-2m-pSK"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="nbO-h6-PPs" secondAttribute="trailing" constant="20" id="4uz-XI-vhO"/>
-                            <constraint firstItem="kIl-4h-YX2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-28" id="IiS-eT-KlC"/>
+                            <constraint firstItem="yUe-YU-qwt" firstAttribute="leading" secondItem="kIl-4h-YX2" secondAttribute="leading" constant="20" id="1C5-wD-9aC"/>
+                            <constraint firstItem="nbO-h6-PPs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="9Pb-wB-e5c"/>
+                            <constraint firstItem="kIl-4h-YX2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="19" id="IiS-eT-KlC"/>
+                            <constraint firstItem="ntK-n1-LeU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="Mba-tX-QMf"/>
+                            <constraint firstItem="dYo-5g-QUS" firstAttribute="bottom" secondItem="9oC-PD-jP7" secondAttribute="bottom" constant="-21" id="NLk-N8-hFb"/>
+                            <constraint firstItem="dYo-5g-QUS" firstAttribute="top" secondItem="yUe-YU-qwt" secondAttribute="top" id="SMh-xi-0NO"/>
+                            <constraint firstItem="ntK-n1-LeU" firstAttribute="top" secondItem="kIl-4h-YX2" secondAttribute="bottom" constant="1" id="Sdx-Is-2pN"/>
                             <constraint firstItem="anh-Cs-d6B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V8J-QN-T3m"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9oC-PD-jP7" secondAttribute="bottom" constant="20" id="XZd-az-H9B"/>
-                            <constraint firstItem="nbO-h6-PPs" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-25" id="YjW-AZ-4Mh"/>
+                            <constraint firstItem="ntK-n1-LeU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dMy-on-OXm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nbO-h6-PPs" secondAttribute="trailing" constant="20" id="l1X-bD-vwJ"/>
                             <constraint firstItem="kIl-4h-YX2" firstAttribute="centerX" secondItem="anh-Cs-d6B" secondAttribute="centerX" id="lXi-N6-6rQ"/>
+                            <constraint firstItem="dYo-5g-QUS" firstAttribute="trailing" secondItem="kIl-4h-YX2" secondAttribute="trailing" constant="-20" id="nV2-p3-vp0"/>
+                            <constraint firstItem="nbO-h6-PPs" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="raC-as-9lf"/>
                             <constraint firstItem="9oC-PD-jP7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t0z-Fy-nBK"/>
                             <constraint firstItem="anh-Cs-d6B" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vur-d8-RUG"/>
                             <constraint firstItem="kIl-4h-YX2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="wD0-Jk-4ZK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Random Jokes" id="jl3-Ze-SlH"/>
+                    <navigationItem key="navigationItem" title="Home" id="jl3-Ze-SlH"/>
                     <connections>
                         <outlet property="chuckTitle" destination="kIl-4h-YX2" id="r9M-gd-mnW"/>
                         <outlet property="funFactButton" destination="9oC-PD-jP7" id="dUN-0h-9dt"/>
                         <outlet property="funFactLabel" destination="nbO-h6-PPs" id="62S-CL-JO4"/>
+                        <outlet property="lineBreak" destination="ntK-n1-LeU" id="lUS-MY-B6N"/>
+                        <outlet property="listButton" destination="yUe-YU-qwt" id="1lF-0a-GhV"/>
                         <outlet property="punchImage" destination="anh-Cs-d6B" id="BQt-O5-6cg"/>
+                        <outlet property="settingsButton" destination="dYo-5g-QUS" id="OTV-l9-agZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2776" y="342"/>
+            <point key="canvasLocation" x="3588" y="342"/>
         </scene>
-        <!--Favorite Jokes-->
+        <!--Table View Controller-->
         <scene sceneID="8ps-DJ-kUZ">
             <objects>
                 <tableViewController id="MM1-Me-Q66" sceneMemberID="viewController">
@@ -125,11 +151,10 @@
                             <outlet property="delegate" destination="MM1-Me-Q66" id="9tL-4y-Ndr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Favorite Jokes" prompt="Tap to view your" id="Mpx-1M-W40"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DS4-2u-Pcp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3451" y="342"/>
+            <point key="canvasLocation" x="4263" y="342"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="EPF-Qc-ztt">
@@ -142,39 +167,36 @@
                     <view key="view" contentMode="scaleToFill" id="3yt-oe-DYJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.31372549020000001" green="0.67450980390000004" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mbG-ks-ZVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2776" y="1126"/>
+            <point key="canvasLocation" x="2776" y="1098"/>
         </scene>
-        <!--Nav Controller-->
-        <scene sceneID="o4Z-6u-D5r">
+        <!--Navigation Controller-->
+        <scene sceneID="DHJ-b5-Yg3">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="md2-tg-8xL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vwk-ZD-cBo" userLabel="Nav Controller" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Share" id="8A5-Y5-GVL"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="k00-nX-xLu" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="As3-AO-MU5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uYc-8r-tbo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ale-sb-yCQ">
-                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wj5-4M-6bj"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="fmm-6Q-oUj"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MwV-fp-HJE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2094" y="342"/>
+            <point key="canvasLocation" x="2776" y="342"/>
         </scene>
     </scenes>
     <resources>
         <image name="dice_black100" width="100" height="100"/>
+        <image name="favorite_list_white" width="44" height="44"/>
         <image name="punch_image" width="250" height="175"/>
+        <image name="settings_white" width="44" height="44"/>
     </resources>
 </document>
