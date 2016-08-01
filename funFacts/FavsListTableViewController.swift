@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChuckFavsTableViewController: UITableViewController {
+class FavsListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

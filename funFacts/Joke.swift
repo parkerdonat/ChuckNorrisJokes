@@ -178,7 +178,7 @@ struct ChuckModel {
         "Chuck Norris doesn't step on toes. Chuck Norris steps on necks.",
         "Chuck Norris does not style his hair. It lays perfectly in place out of sheer terror.",
         "There is no such thing as global warming. Chuck Norris was cold, so he turned the sun up.",
-        "A study showed the leading causes of death in the United States are: 1. Heart disease, 2. Chuck Norris, and 3. Cancer",
+        "A study showed the leading causes of death in the United States are: #1 Heart disease, #2 Chuck Norris, and #3 Cancer",
         "Chuck Norris did in fact, build Rome in a day.",
         "Along with his black belt, Chuck Norris often chooses to wear brown shoes. No one has DARED call him on it. Ever.",
         "Once you go Norris, you are physically unable to go back.",

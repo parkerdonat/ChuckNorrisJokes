@@ -10,11 +10,10 @@
 		DD0079871D2C712700E00051 /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0079861D2C712700E00051 /* Joke.swift */; };
 		DD2E80131C5B00840059C0E5 /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2E80121C5B00840059C0E5 /* ColorModel.swift */; };
 		DD7C72D81D36D6AD00B39D87 /* punch_edit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DD7C72D71D36D6AD00B39D87 /* punch_edit.mp3 */; };
-		DD7C72E41D3D8C6D00B39D87 /* UIColor+AppColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7C72E21D3D8C6D00B39D87 /* UIColor+AppColorPalette.swift */; };
-		DD7C72E51D3D8C6D00B39D87 /* AppearanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7C72E31D3D8C6D00B39D87 /* AppearanceController.swift */; };
-		DD874E501D3EB8C20044369F /* ChuckFavsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD874E4F1D3EB8C20044369F /* ChuckFavsTableViewController.swift */; };
+		DD874E501D3EB8C20044369F /* FavsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD874E4F1D3EB8C20044369F /* FavsListTableViewController.swift */; };
 		DD874E521D3ED5410044369F /* JokeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD874E511D3ED5410044369F /* JokeController.swift */; };
-		DD874E561D43E6C60044369F /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD874E551D43E6C60044369F /* PaddingLabel.swift */; };
+		DD874E5E1D4FD7510044369F /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD874E5D1D4FD7510044369F /* SettingsTableViewController.swift */; };
+		DD874E601D4FD9130044369F /* FavJokeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD874E5F1D4FD9130044369F /* FavJokeViewController.swift */; };
 		DD90B3AF1C59D4AB008B21EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD90B3AE1C59D4AB008B21EE /* AppDelegate.swift */; };
 		DD90B3B11C59D4AB008B21EE /* JokeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD90B3B01C59D4AB008B21EE /* JokeViewController.swift */; };
 		DD90B3B41C59D4AB008B21EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD90B3B21C59D4AB008B21EE /* Main.storyboard */; };
@@ -29,11 +28,10 @@
 		DD0079861D2C712700E00051 /* Joke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
 		DD2E80121C5B00840059C0E5 /* ColorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorModel.swift; sourceTree = "<group>"; };
 		DD7C72D71D36D6AD00B39D87 /* punch_edit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = punch_edit.mp3; sourceTree = "<group>"; };
-		DD7C72E21D3D8C6D00B39D87 /* UIColor+AppColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColorPalette.swift"; sourceTree = "<group>"; };
-		DD7C72E31D3D8C6D00B39D87 /* AppearanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceController.swift; sourceTree = "<group>"; };
-		DD874E4F1D3EB8C20044369F /* ChuckFavsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChuckFavsTableViewController.swift; sourceTree = "<group>"; };
+		DD874E4F1D3EB8C20044369F /* FavsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavsListTableViewController.swift; sourceTree = "<group>"; };
 		DD874E511D3ED5410044369F /* JokeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokeController.swift; sourceTree = "<group>"; };
-		DD874E551D43E6C60044369F /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		DD874E5D1D4FD7510044369F /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		DD874E5F1D4FD9130044369F /* FavJokeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavJokeViewController.swift; sourceTree = "<group>"; };
 		DD90B3AB1C59D4AB008B21EE /* funFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = funFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD90B3AE1C59D4AB008B21EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD90B3B01C59D4AB008B21EE /* JokeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeViewController.swift; sourceTree = "<group>"; };
@@ -82,11 +80,10 @@
 				DD0079861D2C712700E00051 /* Joke.swift */,
 				DD874E511D3ED5410044369F /* JokeController.swift */,
 				DDDF19AE1D344A39001A45A5 /* RoundButton.swift */,
-				DD874E551D43E6C60044369F /* PaddingLabel.swift */,
 				DD90B3B21C59D4AB008B21EE /* Main.storyboard */,
-				DD874E4F1D3EB8C20044369F /* ChuckFavsTableViewController.swift */,
-				DD7C72E21D3D8C6D00B39D87 /* UIColor+AppColorPalette.swift */,
-				DD7C72E31D3D8C6D00B39D87 /* AppearanceController.swift */,
+				DD874E4F1D3EB8C20044369F /* FavsListTableViewController.swift */,
+				DD874E5D1D4FD7510044369F /* SettingsTableViewController.swift */,
+				DD874E5F1D4FD9130044369F /* FavJokeViewController.swift */,
 				DD90B3B51C59D4AB008B21EE /* Assets.xcassets */,
 				DD7C72D71D36D6AD00B39D87 /* punch_edit.mp3 */,
 				DDDF19B21D3455A9001A45A5 /* Adventure.otf */,
@@ -171,13 +168,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD874E601D4FD9130044369F /* FavJokeViewController.swift in Sources */,
 				DD90B3B11C59D4AB008B21EE /* JokeViewController.swift in Sources */,
 				DDDF19AF1D344A39001A45A5 /* RoundButton.swift in Sources */,
-				DD874E501D3EB8C20044369F /* ChuckFavsTableViewController.swift in Sources */,
+				DD874E501D3EB8C20044369F /* FavsListTableViewController.swift in Sources */,
 				DD90B3AF1C59D4AB008B21EE /* AppDelegate.swift in Sources */,
-				DD7C72E51D3D8C6D00B39D87 /* AppearanceController.swift in Sources */,
-				DD7C72E41D3D8C6D00B39D87 /* UIColor+AppColorPalette.swift in Sources */,
-				DD874E561D43E6C60044369F /* PaddingLabel.swift in Sources */,
+				DD874E5E1D4FD7510044369F /* SettingsTableViewController.swift in Sources */,
 				DD0079871D2C712700E00051 /* Joke.swift in Sources */,
 				DD874E521D3ED5410044369F /* JokeController.swift in Sources */,
 				DD2E80131C5B00840059C0E5 /* ColorModel.swift in Sources */,

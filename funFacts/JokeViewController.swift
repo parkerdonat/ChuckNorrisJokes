@@ -30,12 +30,14 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
         isLightColor()
         funFactLabel.text = chuckModel.getRandomJoke()
         funFactLabel.textColor = .whiteColor()
+        chuckTitle.titleLabel!.textColor = .whiteColor()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(jokeTapped))
         funFactLabel.addGestureRecognizer(tapGesture)
         tapGesture.delegate = self
     }
     
+    // MARK: - NAVIGATION OVERRIDE TO HIDE NAV
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         super.viewWillAppear(animated)
@@ -51,6 +53,7 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - TAP TEXT FOR UIMENUCONTROLLER
     func jokeTapped(sender: UITapGestureRecognizer) {
         becomeFirstResponder()
         let menu = UIMenuController.sharedMenuController()
@@ -65,6 +68,7 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func dismissMenu() {
         // Cancel the menu
+        // No extra code needed, dismisses automatically
     }
     
     func shareButtonTapped() {
@@ -79,9 +83,10 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func trashJoke() {
-        
+        // Prompt to make sure to permanantly delete
+        // Delete Joke from joke array
     }
-
+    
     override func canBecomeFirstResponder() -> Bool {
         return true
     }
@@ -103,21 +108,7 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
         return false
     }
     
-    
-    @IBAction func chuckTitleAnimation(sender: AnyObject) {
-        
-        chuckTitle.transform = CGAffineTransformMakeScale(0.1, 0.1)
-        
-        UIView.animateWithDuration(2.0,
-                                   delay: 0,
-                                   usingSpringWithDamping: 0.2,
-                                   initialSpringVelocity: 6.0,
-                                   options: UIViewAnimationOptions.AllowUserInteraction,
-                                   animations: {
-                                    self.chuckTitle.transform = CGAffineTransformIdentity
-            }, completion: nil)
-    }
-    
+    // MARK: - SHAKE FOR NEW JOKE
     override func motionBegan(motion: UIEventSubtype, withEvent event: UIEvent?) {
         if(motion == .MotionShake) {
             print("iPhone Shake Detected!")
@@ -126,6 +117,7 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
+    // MARK: - BUTTON TAP FOR NEW JOKE
     @IBAction func showFunFact() {
         let randomColor: UIColor = .randomColor()
         
@@ -138,6 +130,19 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
     
+    // MARK: - BUTTON FOR FAV LIST
+    @IBAction func favListButtonTapped(sender: AnyObject) {
+    
+    }
+    
+    // MARK: -  BUTTON FOR SETTINGS PAGE
+    @IBAction func settingButtonTapped(sender: AnyObject) {
+        
+    }
+    
+    
+    
+    // MARK: - LOGIC FOR CHANGING ELEMENTS TO WHITE OR BLACK BASED ON RANDOM COLOR
     func isLightColor() {
         
         let color = view.backgroundColor
@@ -165,6 +170,22 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
+    // MARK: - TAP ANIMATIONS
+    @IBAction func chuckTitleAnimation(sender: AnyObject) {
+        chuckTitle.transform = CGAffineTransformMakeScale(0.1, 0.1)
+        lineBreak.transform = CGAffineTransformMakeScale(0.1, 0.1)
+        
+        UIView.animateWithDuration(2.0,
+                                   delay: 0,
+                                   usingSpringWithDamping: 0.2,
+                                   initialSpringVelocity: 6.0,
+                                   options: UIViewAnimationOptions.AllowUserInteraction,
+                                   animations: {
+                                    self.chuckTitle.transform = CGAffineTransformIdentity
+                                    self.lineBreak.transform = CGAffineTransformIdentity
+            }, completion: nil)
+    }
+    
     func punchAnimation() {
         
         punchImage.hidden = false
@@ -189,6 +210,7 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
+    // MARK: - SOUNDS
     func playPunchSound() {
         let path = NSBundle.mainBundle().pathForResource("punch_edit.mp3", ofType:nil)!
         let url = NSURL(fileURLWithPath: path)
@@ -201,5 +223,17 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
             print("Couldn't load file :(")
         }
     }
+    
+    // MARK: - NAVIGATION
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if segue.identifier == "toDetail" {
+//            guard let entryDetailViewController = segue.destinationViewController as? EntryDetailViewController, cell = sender as? UITableViewCell, indexPath = tableView.indexPathForCell(cell) else { return }
+//            
+//            let entry = EntryController.sharedInstance.entries[indexPath.row]
+//            entryDetailViewController.entry = entry
+//        }
+    }
+
 }
 
