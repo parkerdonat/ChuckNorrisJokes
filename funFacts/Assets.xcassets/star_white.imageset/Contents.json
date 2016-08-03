@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "share_black50x50.png",
+      "filename" : "star-white.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "share_black100x100.png",
+      "filename" : "star-white-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "share_black150x150.png",
+      "filename" : "star-white-2.png",
       "scale" : "3x"
     }
   ],

@@ -15,6 +15,7 @@ class FavsListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = currentColor
         tableView.backgroundColor = currentColor
         
@@ -23,6 +24,11 @@ class FavsListTableViewController: UITableViewController {
         //        if let alarm = alarmPin {
         //            updateViewWithAlarm(alarm)
         //        }
+    }
+    
+    // HIDE STATUS BAR
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
     
     override func didReceiveMemoryWarning() {
@@ -54,16 +60,20 @@ class FavsListTableViewController: UITableViewController {
         return isLight
     }
     
+    @IBAction func backButtonTapped(sender: AnyObject) {
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     // MARK: - COLOR FOR CELL
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
         if isLight == false {
             cell.textLabel?.textColor = .whiteColor()
-            let image : UIImage = UIImage(named: "star")!
+            let image : UIImage = UIImage(named: "star_white")!
             cell.imageView!.image = image
         } else {
             cell.textLabel?.textColor = .blackColor()
-            let image: UIImage = UIImage(named: "star")!
+            let image: UIImage = UIImage(named: "star_black")!
             cell.imageView!.image = image
         }
         cell.backgroundColor = currentColor
@@ -88,14 +98,14 @@ class FavsListTableViewController: UITableViewController {
     }
     
     // Override to support editing the table view.
-//    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-//        if editingStyle == .Delete {
-//            
-//            let joke = JokeController.sharedInstance.jokes[indexPath.row]
-//            JokeController.sharedInstance.removeJoke(joke)
-//            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-//        }
-//    }
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            
+            let joke = JokeController.sharedInstance.jokes[indexPath.row]
+            JokeController.sharedInstance.removeJoke(joke)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        }
+    }
     
     func getCurrentBackgroundColor() -> UIColor {
         let currentColor = view.backgroundColor

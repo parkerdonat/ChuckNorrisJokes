@@ -33,6 +33,17 @@ class SettingsTableViewController: UITableViewController {
         //        }
     }
     
+    // HIDE STATUS BAR
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
+    @IBAction func backButtonTapped(sender: AnyObject) {
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    
+    
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         cell.backgroundColor = currentColor
     }

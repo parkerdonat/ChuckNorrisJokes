@@ -11,6 +11,7 @@ import UIKit
 class FavedJokeViewController: UIViewController {
     
     @IBOutlet weak var favJokeLabel: UILabel!
+    @IBOutlet weak var shareButton: UIButton!
     
     var joke: Joke?
     var currentColor = UIColor()
@@ -28,6 +29,22 @@ class FavedJokeViewController: UIViewController {
         }
     }
     
+    // HIDE STATUS BAR
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
+    @IBAction func backButtonTapped(sender: AnyObject) {
+        self.presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func shareButtonTapped(sender: AnyObject) {
+        if let text = favJokeLabel.text {
+            let share = UIActivityViewController(activityItems: [text], applicationActivities: nil)
+            presentViewController(share, animated: true, completion: nil)
+        }
+    }
+    
     // MARK: - LOGIC FOR CHANGING ELEMENTS TO WHITE OR BLACK BASED ON RANDOM COLOR
     func isLightColor() {
         
@@ -41,10 +58,12 @@ class FavedJokeViewController: UIViewController {
             isLight = true
             NSLog("Background color is light \(colorBrightness)")
             favJokeLabel.textColor = .blackColor()
+            shareButton.setImage(UIImage(named: "share_black"), forState: UIControlState.Normal)
         } else {
             isLight = false
             NSLog("Background color is dark \(colorBrightness)")
             favJokeLabel.textColor = .whiteColor()
+            shareButton.setImage(UIImage(named: "share_white"), forState: UIControlState.Normal)
         }
     }
     

@@ -19,12 +19,11 @@
 		DD874E661D5145D80044369F /* DOFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD874E651D5145D80044369F /* DOFavoriteButton.swift */; };
 		DD90B3AF1C59D4AB008B21EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD90B3AE1C59D4AB008B21EE /* AppDelegate.swift */; };
 		DD90B3B11C59D4AB008B21EE /* JokeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD90B3B01C59D4AB008B21EE /* JokeViewController.swift */; };
-		DD90B3B41C59D4AB008B21EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD90B3B21C59D4AB008B21EE /* Main.storyboard */; };
 		DD90B3B61C59D4AB008B21EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD90B3B51C59D4AB008B21EE /* Assets.xcassets */; };
 		DD90B3B91C59D4AB008B21EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD90B3B71C59D4AB008B21EE /* LaunchScreen.storyboard */; };
+		DDD06F241D528BFD00FD825A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDD06F231D528BFD00FD825A /* Main.storyboard */; };
 		DDDF19AF1D344A39001A45A5 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDF19AE1D344A39001A45A5 /* RoundButton.swift */; };
 		DDDF19B31D3455A9001A45A5 /* Adventure.otf in Resources */ = {isa = PBXBuildFile; fileRef = DDDF19B21D3455A9001A45A5 /* Adventure.otf */; };
-		DDDF19B51D345BD7001A45A5 /* Adventure Hollow.otf in Resources */ = {isa = PBXBuildFile; fileRef = DDDF19B41D345BD7001A45A5 /* Adventure Hollow.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,13 +40,13 @@
 		DD90B3AB1C59D4AB008B21EE /* funFacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = funFacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD90B3AE1C59D4AB008B21EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD90B3B01C59D4AB008B21EE /* JokeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeViewController.swift; sourceTree = "<group>"; };
-		DD90B3B31C59D4AB008B21EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DD90B3B51C59D4AB008B21EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD90B3B81C59D4AB008B21EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD90B3BA1C59D4AB008B21EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDD06F231D528BFD00FD825A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		DDD06F251D529D0000FD825A /* manly_man_font.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = manly_man_font.ttf; sourceTree = "<group>"; };
 		DDDF19AE1D344A39001A45A5 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		DDDF19B21D3455A9001A45A5 /* Adventure.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Adventure.otf; sourceTree = "<group>"; };
-		DDDF19B41D345BD7001A45A5 /* Adventure Hollow.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Adventure Hollow.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +85,7 @@
 				DD0079861D2C712700E00051 /* Joke.swift */,
 				DD874E511D3ED5410044369F /* JokeController.swift */,
 				DDDF19AE1D344A39001A45A5 /* RoundButton.swift */,
-				DD90B3B21C59D4AB008B21EE /* Main.storyboard */,
+				DDD06F231D528BFD00FD825A /* Main.storyboard */,
 				DD874E4F1D3EB8C20044369F /* FavsListTableViewController.swift */,
 				DD874E5D1D4FD7510044369F /* SettingsTableViewController.swift */,
 				DD77D3311D51638600FD5377 /* FavedJokeViewController.swift */,
@@ -96,7 +95,7 @@
 				DD90B3B51C59D4AB008B21EE /* Assets.xcassets */,
 				DD7C72D71D36D6AD00B39D87 /* punch_edit.mp3 */,
 				DDDF19B21D3455A9001A45A5 /* Adventure.otf */,
-				DDDF19B41D345BD7001A45A5 /* Adventure Hollow.otf */,
+				DDD06F251D529D0000FD825A /* manly_man_font.ttf */,
 				DD90B3B71C59D4AB008B21EE /* LaunchScreen.storyboard */,
 				DD90B3BA1C59D4AB008B21EE /* Info.plist */,
 			);
@@ -164,9 +163,8 @@
 				DD90B3B91C59D4AB008B21EE /* LaunchScreen.storyboard in Resources */,
 				DD7C72D81D36D6AD00B39D87 /* punch_edit.mp3 in Resources */,
 				DD90B3B61C59D4AB008B21EE /* Assets.xcassets in Resources */,
+				DDD06F241D528BFD00FD825A /* Main.storyboard in Resources */,
 				DDDF19B31D3455A9001A45A5 /* Adventure.otf in Resources */,
-				DD90B3B41C59D4AB008B21EE /* Main.storyboard in Resources */,
-				DDDF19B51D345BD7001A45A5 /* Adventure Hollow.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,14 +193,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DD90B3B21C59D4AB008B21EE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DD90B3B31C59D4AB008B21EE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DD90B3B71C59D4AB008B21EE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

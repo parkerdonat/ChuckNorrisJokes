@@ -19,6 +19,7 @@ class AppearanceController {
             NSFontAttributeName: UIFont(name: "Adventure", size: 24)!,
             NSForegroundColorAttributeName: UIColor.whiteColor()
         ]
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Avenir-Medium", size: 18)!], forState: UIControlState.Normal)
     }
 }
 

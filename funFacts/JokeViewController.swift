@@ -41,15 +41,9 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
         starButton.addTarget(self, action: #selector(starButtonTappedForAnimation), forControlEvents: .TouchUpInside)
     }
     
-    // MARK: - NAVIGATION OVERRIDE TO HIDE NAV
-    override func viewWillAppear(animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-        super.viewWillAppear(animated)
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
-        super.viewWillDisappear(animated)
+    // HIDE STATUS BAR
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
     
     override func didReceiveMemoryWarning() {
@@ -108,8 +102,8 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
             sender.select()
             
             // Fade out animation
-            UIView.animateWithDuration(0.5,
-                                       delay: 1.5,
+            UIView.animateWithDuration(0.4,
+                                       delay: 2.0,
                                        options: UIViewAnimationOptions.CurveLinear,
                                        animations: {
                                         self.starButton.alpha = 0
