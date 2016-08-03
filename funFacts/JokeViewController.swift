@@ -20,6 +20,7 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var listButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
     @IBOutlet weak var lineBreak: UIView!
+    @IBOutlet weak var starButton: DOFavoriteButton!
     
     let chuckModel = ChuckModel()
     var isLight = false
@@ -35,6 +36,9 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(jokeTapped))
         funFactLabel.addGestureRecognizer(tapGesture)
         tapGesture.delegate = self
+        
+        // Star stapped animation
+        starButton.addTarget(self, action: #selector(starButtonTappedForAnimation), forControlEvents: .TouchUpInside)
     }
     
     // MARK: - NAVIGATION OVERRIDE TO HIDE NAV
@@ -59,9 +63,9 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
         let menu = UIMenuController.sharedMenuController()
         let dismiss = UIMenuItem(title: "❌", action: #selector(dismissMenu))
         let share = UIMenuItem(title: "Share", action: #selector(shareButtonTapped))
-        let favorite = UIMenuItem(title: "Favorite", action: #selector(favoriteButtonTapped))
-        let trash = UIMenuItem(title: "🗑", action: #selector(trashJoke))
-        menu.menuItems = [dismiss, share, favorite, trash]
+        let favorite = UIMenuItem(title: "⭐️", action: #selector(favoriteButtonTapped))
+        //let trash = UIMenuItem(title: "🗑", action: #selector(trashJoke))
+        menu.menuItems = [dismiss, share, favorite]
         menu.setTargetRect(CGRectMake(100, 0, 100, 100), inView: self.funFactLabel)
         menu.setMenuVisible(true, animated: true)
     }
@@ -78,14 +82,45 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    func favoriteButtonTapped() {
-        //Do something here
+    func favoriteButtonTapped(sender: DOFavoriteButton) {
+        // Save favorite joke
+        let favJoke = Joke(joke: self.funFactLabel.text!)
+        JokeController.sharedInstance.addJoke(favJoke)
+        
+        // Star animation
+        starButton.hidden = false
+        starButton.sendActionsForControlEvents(.TouchUpInside)
+        
+        NSTimer.scheduledTimerWithTimeInterval(NSTimeInterval(2), target: self, selector: #selector(hideTheStar), userInfo: nil, repeats: false)
     }
     
-    func trashJoke() {
-        // Prompt to make sure to permanantly delete
-        // Delete Joke from joke array
+    func hideTheStar() {
+        starButton.sendActionsForControlEvents(.TouchUpInside)
+        starButton.hidden = true
     }
+    
+    func starButtonTappedForAnimation(sender: DOFavoriteButton) {
+        if sender.selected {
+            // deselect
+            sender.deselect()
+        } else {
+            // select with animation
+            sender.select()
+            
+            // Fade out animation
+            UIView.animateWithDuration(0.5,
+                                       delay: 1.5,
+                                       options: UIViewAnimationOptions.CurveLinear,
+                                       animations: {
+                                        self.starButton.alpha = 0
+                }, completion: nil)
+        }
+    }
+    
+//    func trashJoke() {
+//        // Prompt to make sure to permanantly delete
+//        // Delete Joke from joke array
+//    }
     
     override func canBecomeFirstResponder() -> Bool {
         return true
@@ -102,9 +137,9 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
         if action == #selector(favoriteButtonTapped) {
             return true
         }
-        if action == #selector(trashJoke) {
-            return true
-        }
+//        if action == #selector(trashJoke) {
+//            return true
+//        }
         return false
     }
     
@@ -139,8 +174,6 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBAction func settingButtonTapped(sender: AnyObject) {
         
     }
-    
-    
     
     // MARK: - LOGIC FOR CHANGING ELEMENTS TO WHITE OR BLACK BASED ON RANDOM COLOR
     func isLightColor() {
@@ -224,16 +257,22 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-    // MARK: - NAVIGATION
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == "toDetail" {
-//            guard let entryDetailViewController = segue.destinationViewController as? EntryDetailViewController, cell = sender as? UITableViewCell, indexPath = tableView.indexPathForCell(cell) else { return }
-//            
-//            let entry = EntryController.sharedInstance.entries[indexPath.row]
-//            entryDetailViewController.entry = entry
-//        }
+    func getCurrentBackgroundColor() -> UIColor {
+        let currentColor = view.backgroundColor
+        return currentColor!
     }
-
+    
+    // MARK: - NAVIGATION
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toSettings" {
+            guard let settingsTableViewController = segue.destinationViewController as? SettingsTableViewController else { return }
+            settingsTableViewController.navigationItem.title = "Settings"
+            settingsTableViewController.currentColor = getCurrentBackgroundColor()
+        } else if segue.identifier == "toList" {
+            guard let favsListTableViewController = segue.destinationViewController as? FavsListTableViewController else { return }
+            favsListTableViewController.navigationItem.title = "Favorites"
+            favsListTableViewController.currentColor = getCurrentBackgroundColor()
+        }
+    }
 }
 

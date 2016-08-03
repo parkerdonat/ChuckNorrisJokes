@@ -9,33 +9,65 @@
 import UIKit
 
 class FavsListTableViewController: UITableViewController {
-
+    
+    var currentColor = UIColor()
+    var isLight = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        view.backgroundColor = currentColor
+        tableView.backgroundColor = currentColor
+        
+        isLightColor()
+        
+        //        if let alarm = alarmPin {
+        //            updateViewWithAlarm(alarm)
+        //        }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    // MARK: - LOGIC FOR CHANGING ELEMENTS TO WHITE OR BLACK BASED ON RANDOM COLOR
+    func isLightColor() {
+        
+        let color = view.backgroundColor
+        
+        let componentColors = CGColorGetComponents(color!.CGColor)
+        
+        let colorBrightness: CGFloat = ((componentColors[0] * 299) + (componentColors[1] * 587) + (componentColors[2] * 114)) / 1000
+        
+        if (colorBrightness >= 0.5) {
+            isLight = true
+            NSLog("Background color is light \(colorBrightness)")
+            // Add black color
+            self.tableView.separatorColor = UIColor.blackColor()
+        } else {
+            isLight = false
+            NSLog("Background color is dark \(colorBrightness)")
+            // Add white color
+            self.tableView.separatorColor = UIColor.whiteColor()
+        }
+    }
+    
+    // MARK: - COLOR FOR CELL
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.backgroundColor = currentColor
+    }
+    
     // MARK: - Table view data source
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return JokeController.sharedInstance.jokes.count
     }
-
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("chuck", forIndexPath: indexPath)
-
+        
         let joke = JokeController.sharedInstance.jokes[indexPath.row]
         cell.textLabel?.text = joke.text
         
@@ -45,21 +77,29 @@ class FavsListTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-
+            
             let joke = JokeController.sharedInstance.jokes[indexPath.row]
             JokeController.sharedInstance.removeJoke(joke)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
     }
- 
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func getCurrentBackgroundColor() -> UIColor {
+        let currentColor = view.backgroundColor
+        return currentColor!
     }
     
-
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toFavorite" {
+            guard let favedJokeViewController = segue.destinationViewController as? FavedJokeViewController, cell = sender as? UITableViewCell, indexPath = tableView.indexPathForCell(cell) else { return }
+            
+            let joke = JokeController.sharedInstance.jokes[indexPath.row]
+            favedJokeViewController.joke = joke
+            favedJokeViewController.currentColor = getCurrentBackgroundColor()
+            
+        }
+    }
 }

@@ -14,6 +14,7 @@
             <string>Adventure</string>
             <string>Adventure</string>
             <string>Adventure</string>
+            <string>Adventure</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -85,7 +86,7 @@
                                 <state key="normal" image="settings_white"/>
                                 <connections>
                                     <action selector="settingButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KQA-8N-NlY"/>
-                                    <segue destination="oou-1H-078" kind="show" id="Pa5-Zo-Ikf"/>
+                                    <segue destination="oou-1H-078" kind="show" identifier="toSettings" id="Pa5-Zo-Ikf"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ntK-n1-LeU">
@@ -100,8 +101,33 @@
                                 <state key="normal" image="favorite_list_white"/>
                                 <connections>
                                     <action selector="favListButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tT8-Q8-4hH"/>
-                                    <segue destination="MM1-Me-Q66" kind="show" id="5wA-N3-BH0"/>
+                                    <segue destination="MM1-Me-Q66" kind="show" identifier="toList" id="5wA-N3-BH0"/>
                                 </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUj-4I-lEN" customClass="DOFavoriteButton" customModule="funFacts" customModuleProvider="target">
+                                <rect key="frame" x="236" y="236" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="dsG-rB-6Rf"/>
+                                    <constraint firstAttribute="width" constant="128" id="yPZ-yb-iyW"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image" value="star"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="imageColorOn">
+                                        <color key="value" red="0.97254901960784312" green="0.78823529411764703" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="imageColorOff">
+                                        <color key="value" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="circleColor">
+                                        <color key="value" red="0.97254901959999995" green="0.78823529410000004" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" red="0.97254901960784312" green="0.53428465934459513" blue="0.15033098949975213" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.73333333333333328" green="0.19502466340416416" blue="0.18867820255787213" alpha="1" colorSpace="calibratedRGB"/>
@@ -111,6 +137,7 @@
                             <constraint firstItem="kIl-4h-YX2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="19" id="IiS-eT-KlC"/>
                             <constraint firstItem="ntK-n1-LeU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="Mba-tX-QMf"/>
                             <constraint firstItem="dYo-5g-QUS" firstAttribute="bottom" secondItem="9oC-PD-jP7" secondAttribute="bottom" constant="-21" id="NLk-N8-hFb"/>
+                            <constraint firstItem="YUj-4I-lEN" firstAttribute="centerX" secondItem="anh-Cs-d6B" secondAttribute="centerX" id="S5B-hN-PMh"/>
                             <constraint firstItem="dYo-5g-QUS" firstAttribute="top" secondItem="yUe-YU-qwt" secondAttribute="top" id="SMh-xi-0NO"/>
                             <constraint firstItem="ntK-n1-LeU" firstAttribute="top" secondItem="kIl-4h-YX2" secondAttribute="bottom" constant="1" id="Sdx-Is-2pN"/>
                             <constraint firstItem="anh-Cs-d6B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V8J-QN-T3m"/>
@@ -121,11 +148,12 @@
                             <constraint firstItem="dYo-5g-QUS" firstAttribute="trailing" secondItem="kIl-4h-YX2" secondAttribute="trailing" constant="-20" id="nV2-p3-vp0"/>
                             <constraint firstItem="nbO-h6-PPs" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="raC-as-9lf"/>
                             <constraint firstItem="9oC-PD-jP7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t0z-Fy-nBK"/>
+                            <constraint firstItem="YUj-4I-lEN" firstAttribute="centerY" secondItem="anh-Cs-d6B" secondAttribute="centerY" id="uX3-8X-QNZ"/>
                             <constraint firstItem="anh-Cs-d6B" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vur-d8-RUG"/>
                             <constraint firstItem="kIl-4h-YX2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="wD0-Jk-4ZK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Back" id="jl3-Ze-SlH"/>
+                    <navigationItem key="navigationItem" id="jl3-Ze-SlH"/>
                     <connections>
                         <outlet property="chuckTitle" destination="kIl-4h-YX2" id="r9M-gd-mnW"/>
                         <outlet property="funFactButton" destination="9oC-PD-jP7" id="dUN-0h-9dt"/>
@@ -134,6 +162,7 @@
                         <outlet property="listButton" destination="yUe-YU-qwt" id="1lF-0a-GhV"/>
                         <outlet property="punchImage" destination="anh-Cs-d6B" id="BQt-O5-6cg"/>
                         <outlet property="settingsButton" destination="dYo-5g-QUS" id="OTV-l9-agZ"/>
+                        <outlet property="starButton" destination="YUj-4I-lEN" id="fki-ie-sPa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -143,9 +172,8 @@
         <!--Favs List Table View Controller-->
         <scene sceneID="8ps-DJ-kUZ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DS4-2u-Pcp" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="MM1-Me-Q66" customClass="FavsListTableViewController" customModule="funFacts" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="AS1-wh-20z">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="AS1-wh-20z">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -158,7 +186,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="BRT-ho-FqU" kind="show" id="oBX-nQ-zFU"/>
+                                    <segue destination="BRT-ho-FqU" kind="show" identifier="toFavorite" id="oBX-nQ-zFU"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -168,6 +196,7 @@
                         </connections>
                     </tableView>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DS4-2u-Pcp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3588" y="1074"/>
         </scene>
@@ -178,7 +207,8 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="O2V-je-B1C">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.73333333329999995" green="0.19502466339999999" blue="0.18867820260000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <sections>
                             <tableViewSection id="P8T-Bn-O6M">
                                 <cells>
@@ -195,7 +225,7 @@
                                                         <constraint firstAttribute="width" constant="300" id="fu4-iE-k4N"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Adventure" family="Adventure" pointSize="18"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -205,6 +235,7 @@
                                                 <constraint firstItem="LAO-w9-q99" firstAttribute="leading" secondItem="qSJ-AN-9yY" secondAttribute="leadingMargin" id="lqU-tn-Dv7"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.73333333329999995" green="0.19502466339999999" blue="0.18867820260000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="accessoryView" destination="97H-hI-b36" id="Vvj-T7-klC"/>
                                         </connections>
@@ -226,7 +257,7 @@
                                                         <constraint firstAttribute="width" constant="300" id="YLw-c6-fbn"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Adventure" family="Adventure" pointSize="18"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -236,6 +267,7 @@
                                                 <constraint firstItem="nLU-ue-Pc7" firstAttribute="top" secondItem="QDd-Ba-h3J" secondAttribute="top" id="vnB-XO-gvm"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.73333333329999995" green="0.19502466339999999" blue="0.18867820260000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="accessoryView" destination="yPw-Sg-jKd" id="dga-60-XzG"/>
                                         </connections>
@@ -257,7 +289,7 @@
                                                         <constraint firstAttribute="width" constant="300" id="p8L-wL-ITi"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Adventure" family="Adventure" pointSize="18"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -267,6 +299,7 @@
                                                 <constraint firstItem="GYQ-NW-TcO" firstAttribute="top" secondItem="Nrk-B1-yQB" secondAttribute="top" id="esG-hQ-jWd"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.73333333329999995" green="0.19502466339999999" blue="0.18867820260000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="accessoryView" destination="nfp-T3-vIi" id="Bnn-TQ-gBn"/>
                                         </connections>
@@ -297,6 +330,7 @@
                                                 <constraint firstItem="xBi-1g-m2Y" firstAttribute="top" secondItem="TOA-QT-76Z" secondAttribute="top" id="yNR-P9-Yof"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.73333333329999995" green="0.19502466339999999" blue="0.18867820260000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -307,7 +341,10 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="animationLabel" destination="GYQ-NW-TcO" id="Thn-ZK-DFJ"/>
                         <outlet property="randomColorSwitch" destination="97H-hI-b36" id="QWy-ET-002"/>
+                        <outlet property="randomLabel" destination="LAO-w9-q99" id="ZPB-rV-baQ"/>
+                        <outlet property="soundLabel" destination="nLU-ue-Pc7" id="47c-Ln-jSo"/>
                         <outlet property="soundSwitch" destination="yPw-Sg-jKd" id="zhG-qJ-MaS"/>
                         <outlet property="switchAnimation" destination="nfp-T3-vIi" id="GNT-D4-GbC"/>
                     </connections>
@@ -331,10 +368,10 @@
             </objects>
             <point key="canvasLocation" x="4258" y="342"/>
         </scene>
-        <!--View Controller-->
+        <!--Faved Joke View Controller-->
         <scene sceneID="Up3-kX-nUR">
             <objects>
-                <viewController id="BRT-ho-FqU" sceneMemberID="viewController">
+                <viewController id="BRT-ho-FqU" customClass="FavedJokeViewController" customModule="funFacts" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VfO-5O-kFt"/>
                         <viewControllerLayoutGuide type="bottom" id="4Pl-rN-nG6"/>
@@ -342,12 +379,31 @@
                     <view key="view" contentMode="scaleToFill" id="CBy-rd-ogG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHK-bJ-ohC">
+                                <rect key="frame" x="41" y="118" width="518" height="363"/>
+                                <string key="text">Fact: An adult has 206 bones in their body but when Chuck Norris hits you with a roundhouse kick to the face you'll have 3,000,000 bones. Also, fact. Fact: An adult has 206 bones in their body but when Chuck Norris hits you with a roundhouse kick to the face you'll have 3,000,000 bones. Also, fact.</string>
+                                <fontDescription key="fontDescription" name="Adventure" family="Adventure" pointSize="32"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.64705882349999999" green="0.82745098039999998" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="NHK-bJ-ohC" firstAttribute="top" secondItem="VfO-5O-kFt" secondAttribute="bottom" constant="54" id="6vL-gU-qhd"/>
+                            <constraint firstItem="NHK-bJ-ohC" firstAttribute="centerX" secondItem="CBy-rd-ogG" secondAttribute="centerX" id="ZNv-Be-8G5"/>
+                            <constraint firstItem="NHK-bJ-ohC" firstAttribute="centerY" secondItem="CBy-rd-ogG" secondAttribute="centerY" id="bNm-67-FMz"/>
+                            <constraint firstItem="NHK-bJ-ohC" firstAttribute="centerX" secondItem="CBy-rd-ogG" secondAttribute="centerX" id="iRn-2b-8hA"/>
+                            <constraint firstItem="NHK-bJ-ohC" firstAttribute="leading" secondItem="CBy-rd-ogG" secondAttribute="leadingMargin" constant="21" id="w3Z-4u-Mf3"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="favJokeLabel" destination="NHK-bJ-ohC" id="WOa-Cm-XNw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U2K-IC-aap" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4268" y="1074"/>
+            <point key="canvasLocation" x="4291" y="1074"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DHJ-b5-Yg3">
@@ -373,5 +429,6 @@
         <image name="favorite_list_white" width="44" height="44"/>
         <image name="punch_image" width="250" height="175"/>
         <image name="settings_white" width="44" height="44"/>
+        <image name="star" width="128" height="128"/>
     </resources>
 </document>
