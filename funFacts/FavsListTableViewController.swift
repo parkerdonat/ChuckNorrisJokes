@@ -66,18 +66,16 @@ class FavsListTableViewController: UITableViewController {
     
     // MARK: - COLOR FOR CELL
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        let image : UIImage = UIImage(named: "star_colored_45")!
+        cell.imageView!.image = image
         
         if isLight == false {
             cell.textLabel?.textColor = .whiteColor()
-            let image : UIImage = UIImage(named: "star_white")!
-            cell.imageView!.image = image
         } else {
             cell.textLabel?.textColor = .blackColor()
-            let image: UIImage = UIImage(named: "star_black")!
-            cell.imageView!.image = image
         }
         cell.backgroundColor = currentColor
-        cell.textLabel!.font = UIFont(name:"Adventure", size:20)
+        cell.textLabel!.font = UIFont(name:"PassionOne-Regular", size:20)
     }
     
     // MARK: - Table view data source

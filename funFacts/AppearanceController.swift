@@ -16,10 +16,10 @@ class AppearanceController {
         UINavigationBar.appearance().barTintColor = UIColor.blackColor()
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         UINavigationBar.appearance().titleTextAttributes = [
-            NSFontAttributeName: UIFont(name: "Adventure", size: 24)!,
+            NSFontAttributeName: UIFont(name: "PassionOne-Regular", size: 28)!,
             NSForegroundColorAttributeName: UIColor.whiteColor()
         ]
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "Avenir-Medium", size: 18)!], forState: UIControlState.Normal)
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "PassionOne-Regular", size: 20)!], forState: UIControlState.Normal)
     }
 }
 

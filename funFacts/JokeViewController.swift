@@ -28,15 +28,28 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         isLightColor()
+        
+        if isLight == false {
+            // White
+            funFactLabel.textColor = .whiteColor()
+            chuckTitle.titleLabel?.textColor = .whiteColor()
+        } else {
+            // Dark
+            funFactLabel.textColor = .blackColor()
+            chuckTitle.titleLabel?.textColor = .blackColor()
+        }
+        
+        let randomColor: UIColor = .randomColor()
+        view.backgroundColor = randomColor
+        
         funFactLabel.text = chuckModel.getRandomJoke()
         funFactLabel.textColor = .whiteColor()
-        chuckTitle.titleLabel!.textColor = .whiteColor()
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(jokeTapped))
-        funFactLabel.addGestureRecognizer(tapGesture)
-        tapGesture.delegate = self
-        
+        addTapGesture()
+        addSwipeGesture()
+    
         // Star stapped animation
         starButton.addTarget(self, action: #selector(starButtonTappedForAnimation), forControlEvents: .TouchUpInside)
     }
@@ -49,6 +62,49 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - TAP GESTURE FOR JOKE FOR MENU
+    func addTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(jokeTapped))
+        funFactLabel.addGestureRecognizer(tapGesture)
+        tapGesture.delegate = self
+    }
+    // MARK: -  SWIPE FOR NEW JOKE
+    func addSwipeGesture() {
+        let directions: [UISwipeGestureRecognizerDirection] = [.Right, .Left]
+        for direction in directions {
+            let gesture = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe))
+            gesture.direction = direction
+            funFactLabel.addGestureRecognizer(gesture)
+        }
+    }
+    
+    func handleSwipe(sender: UISwipeGestureRecognizer) {
+        print(sender.direction)
+        showFunFact()
+    }
+    
+    // MARK: - SHAKE FOR NEW JOKE
+    override func motionBegan(motion: UIEventSubtype, withEvent event: UIEvent?) {
+        if(motion == .MotionShake) {
+            print("iPhone Shake Detected!")
+            
+            showFunFact()
+        }
+    }
+    
+    // MARK: - BUTTON TAP FOR NEW JOKE
+    @IBAction func showFunFact() {
+        let randomColor: UIColor = .randomColor()
+        
+        view.backgroundColor = randomColor
+        funFactLabel.text = chuckModel.getRandomJoke()
+        
+        isLightColor()
+        punchAnimation()
+        playPunchSound()
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
     
     // MARK: - TAP TEXT FOR UIMENUCONTROLLER
@@ -100,14 +156,6 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
         } else {
             // select with animation
             sender.select()
-            
-            // Fade out animation
-            UIView.animateWithDuration(0.4,
-                                       delay: 2.0,
-                                       options: UIViewAnimationOptions.CurveLinear,
-                                       animations: {
-                                        self.starButton.alpha = 0
-                }, completion: nil)
         }
     }
     
@@ -135,28 +183,6 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
 //            return true
 //        }
         return false
-    }
-    
-    // MARK: - SHAKE FOR NEW JOKE
-    override func motionBegan(motion: UIEventSubtype, withEvent event: UIEvent?) {
-        if(motion == .MotionShake) {
-            print("iPhone Shake Detected!")
-            
-            showFunFact()
-        }
-    }
-    
-    // MARK: - BUTTON TAP FOR NEW JOKE
-    @IBAction func showFunFact() {
-        let randomColor: UIColor = .randomColor()
-        
-        view.backgroundColor = randomColor
-        funFactLabel.text = chuckModel.getRandomJoke()
-        
-        isLightColor()
-        punchAnimation()
-        playPunchSound()
-        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
     
     // MARK: - BUTTON FOR FAV LIST
