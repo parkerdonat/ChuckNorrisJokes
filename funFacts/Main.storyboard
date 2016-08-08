@@ -7,8 +7,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="PassionOne-Bold.otf">
+            <string>PassionOne-Bold</string>
+        </mutableArray>
         <mutableArray key="PassionOne-Regular.otf">
-            <string>PassionOne-Regular</string>
             <string>PassionOne-Regular</string>
             <string>PassionOne-Regular</string>
         </mutableArray>
@@ -27,19 +29,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbO-h6-PPs">
-                                <rect key="frame" x="40" y="150" width="520" height="300"/>
+                                <rect key="frame" x="40" y="184" width="520" height="232"/>
                                 <string key="text">Fact: An adult has 206 bones in their body but when Chuck Norris hits you with a roundhouse kick to the face you'll have 3,000,000 bones. Also, fact. Fact: An adult has 206 bones in their body but when Chuck Norris hits you with a roundhouse kick to the face you'll have 3,000,000 bones. Also, fact.   </string>
-                                <fontDescription key="fontDescription" name="PassionOne-Regular" family="Passion" pointSize="34"/>
+                                <fontDescription key="fontDescription" name="PassionOne-Regular" family="Passion" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yUe-YU-qwt" userLabel="list">
-                                <rect key="frame" x="40" y="518" width="44" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="OAF-gF-Tnu"/>
-                                    <constraint firstAttribute="width" constant="44" id="oMH-lP-9Ky"/>
-                                </constraints>
+                                <rect key="frame" x="35" y="535" width="40" height="40"/>
                                 <state key="normal" image="favorite_list_white"/>
                                 <connections>
                                     <action selector="favListButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tT8-Q8-4hH"/>
@@ -47,35 +45,36 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ntK-n1-LeU">
-                                <rect key="frame" x="178" y="91" width="245" height="5"/>
+                                <rect key="frame" x="140" y="91" width="320" height="5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="5" id="I0W-8L-w8I"/>
+                                    <constraint firstAttribute="width" constant="320" id="cv6-1a-Bfh"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIl-4h-YX2">
-                                <rect key="frame" x="178" y="58" width="245" height="31"/>
+                                <rect key="frame" x="140" y="43" width="320" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="245" id="IDD-WT-bv0"/>
-                                    <constraint firstAttribute="height" constant="31" id="PFe-RB-2zH"/>
+                                    <constraint firstAttribute="height" constant="50" id="JVV-J7-uUq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="PassionOne-Regular" family="Passion" pointSize="33"/>
-                                <state key="normal" title="Random Chuck Facts">
+                                <fontDescription key="fontDescription" name="PassionOne-Bold" family="Passion One" pointSize="54"/>
+                                <state key="normal" title="CHUCK FACTS">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="chuckTitleAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F3U-eF-2pO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oC-PD-jP7" customClass="RoundButton" customModule="funFacts" customModuleProvider="target">
-                                <rect key="frame" x="250" y="480" width="100" height="100"/>
+                                <rect key="frame" x="245" y="480" width="110" height="110"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="KBk-lb-zqq"/>
+                                    <constraint firstAttribute="width" constant="110" id="KBk-lb-zqq"/>
                                     <constraint firstAttribute="width" secondItem="9oC-PD-jP7" secondAttribute="height" multiplier="1:1" id="Yst-aj-0Jx"/>
-                                    <constraint firstAttribute="height" constant="100" id="co7-wG-Irt"/>
+                                    <constraint firstAttribute="height" constant="110" id="co7-wG-Irt"/>
                                 </constraints>
-                                <state key="normal" image="dice_black_trace"/>
+                                <state key="normal" image="chuck_stensil_small"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <integer key="value" value="2"/>
@@ -121,7 +120,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYo-5g-QUS" userLabel="settings">
-                                <rect key="frame" x="508" y="515" width="50" height="50"/>
+                                <rect key="frame" x="525" y="535" width="40" height="40"/>
                                 <state key="normal" image="share_white"/>
                                 <connections>
                                     <action selector="settingButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KQA-8N-NlY"/>
@@ -130,25 +129,24 @@
                         </subviews>
                         <color key="backgroundColor" red="0.73333333333333328" green="0.19502466340416416" blue="0.18867820255787213" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="dYo-5g-QUS" secondAttribute="trailing" constant="22" id="6Ff-L5-PPk"/>
                             <constraint firstItem="nbO-h6-PPs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="9Pb-wB-e5c"/>
-                            <constraint firstItem="dYo-5g-QUS" firstAttribute="centerY" secondItem="yUe-YU-qwt" secondAttribute="centerY" id="CyY-2o-517"/>
-                            <constraint firstItem="yUe-YU-qwt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="DHj-PA-fHs"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yUe-YU-qwt" secondAttribute="bottom" constant="38" id="I1J-Uw-vQ4"/>
-                            <constraint firstItem="kIl-4h-YX2" firstAttribute="leading" secondItem="ntK-n1-LeU" secondAttribute="leading" id="Om8-d8-Qp3"/>
+                            <constraint firstItem="yUe-YU-qwt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="Nvg-wt-0bT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yUe-YU-qwt" secondAttribute="bottom" constant="25" id="OSd-NV-XBR"/>
+                            <constraint firstItem="kIl-4h-YX2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="23" id="Q9V-wC-zKg"/>
                             <constraint firstItem="YUj-4I-lEN" firstAttribute="centerX" secondItem="anh-Cs-d6B" secondAttribute="centerX" id="S5B-hN-PMh"/>
-                            <constraint firstItem="yUe-YU-qwt" firstAttribute="leading" secondItem="nbO-h6-PPs" secondAttribute="leading" id="SZT-i9-eqF"/>
                             <constraint firstItem="anh-Cs-d6B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V8J-QN-T3m"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9oC-PD-jP7" secondAttribute="bottom" constant="20" id="XZd-az-H9B"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9oC-PD-jP7" secondAttribute="bottom" constant="10" id="XZd-az-H9B"/>
                             <constraint firstItem="ntK-n1-LeU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dMy-on-OXm"/>
-                            <constraint firstItem="kIl-4h-YX2" firstAttribute="trailing" secondItem="ntK-n1-LeU" secondAttribute="trailing" id="ddm-w5-iqb"/>
-                            <constraint firstItem="kIl-4h-YX2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="38" id="f1X-5q-Qsa"/>
-                            <constraint firstItem="ntK-n1-LeU" firstAttribute="top" secondItem="kIl-4h-YX2" secondAttribute="bottom" constant="2" id="kQ0-2k-5XM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nbO-h6-PPs" secondAttribute="trailing" constant="20" id="l1X-bD-vwJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dYo-5g-QUS" secondAttribute="trailing" constant="15" id="n9T-iw-Lq7"/>
+                            <constraint firstItem="ntK-n1-LeU" firstAttribute="top" secondItem="kIl-4h-YX2" secondAttribute="bottom" constant="-2" id="nyd-yz-zbm"/>
+                            <constraint firstItem="kIl-4h-YX2" firstAttribute="leading" secondItem="ntK-n1-LeU" secondAttribute="leading" id="o5a-85-nDr"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dYo-5g-QUS" secondAttribute="bottom" constant="25" id="rSc-nZ-DHL"/>
                             <constraint firstItem="nbO-h6-PPs" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="raC-as-9lf"/>
                             <constraint firstItem="9oC-PD-jP7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t0z-Fy-nBK"/>
                             <constraint firstItem="YUj-4I-lEN" firstAttribute="centerY" secondItem="anh-Cs-d6B" secondAttribute="centerY" id="uX3-8X-QNZ"/>
                             <constraint firstItem="anh-Cs-d6B" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vur-d8-RUG"/>
+                            <constraint firstItem="kIl-4h-YX2" firstAttribute="trailing" secondItem="ntK-n1-LeU" secondAttribute="trailing" id="zhq-dy-vm0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jl3-Ze-SlH"/>
@@ -281,10 +279,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="dice_black_trace" width="100" height="100"/>
-        <image name="favorite_list_white" width="44" height="44"/>
+        <image name="chuck_stensil_small" width="100" height="100"/>
+        <image name="favorite_list_white" width="40" height="40"/>
         <image name="punch_image" width="250" height="175"/>
-        <image name="share_white" width="50" height="50"/>
+        <image name="share_white" width="40" height="40"/>
         <image name="star" width="128" height="128"/>
     </resources>
 </document>

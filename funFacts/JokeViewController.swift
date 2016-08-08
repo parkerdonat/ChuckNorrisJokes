@@ -31,6 +31,11 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
         
         isLightColor()
         
+        // Fixes tap animation and adds kerning to text
+        let title = chuckTitle.titleForState(.Normal)
+        let attributedTitle = NSAttributedString(string: title!, attributes: [NSKernAttributeName: 2.5])
+        chuckTitle.setAttributedTitle(attributedTitle, forState: .Normal)
+        
         let randomColor: UIColor = .randomColor()
         view.backgroundColor = randomColor
         
@@ -45,9 +50,9 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     // HIDE STATUS BAR
-//    override func prefersStatusBarHidden() -> Bool {
-//        return true
-//    }
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -218,6 +223,7 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: - TAP ANIMATIONS
     @IBAction func chuckTitleAnimation(sender: AnyObject) {
+        
         chuckTitle.transform = CGAffineTransformMakeScale(0.1, 0.1)
         lineBreak.transform = CGAffineTransformMakeScale(0.1, 0.1)
         
