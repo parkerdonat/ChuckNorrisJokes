@@ -20,10 +20,7 @@ class FavsListTableViewController: UITableViewController {
         tableView.backgroundColor = currentColor
         
         isLightColor()
-        
-        //        if let alarm = alarmPin {
-        //            updateViewWithAlarm(alarm)
-        //        }
+    
     }
     
     // HIDE STATUS BAR

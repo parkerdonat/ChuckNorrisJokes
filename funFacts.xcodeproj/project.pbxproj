@@ -13,7 +13,6 @@
 		DD7C72D81D36D6AD00B39D87 /* punch_edit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = DD7C72D71D36D6AD00B39D87 /* punch_edit.mp3 */; };
 		DD874E501D3EB8C20044369F /* FavsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD874E4F1D3EB8C20044369F /* FavsListTableViewController.swift */; };
 		DD874E521D3ED5410044369F /* JokeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD874E511D3ED5410044369F /* JokeController.swift */; };
-		DD874E5E1D4FD7510044369F /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD874E5D1D4FD7510044369F /* SettingsTableViewController.swift */; };
 		DD874E631D513A4A0044369F /* UIColor+AppColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD874E611D513A4A0044369F /* UIColor+AppColorPalette.swift */; };
 		DD874E641D513A4A0044369F /* AppearanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD874E621D513A4A0044369F /* AppearanceController.swift */; };
 		DD874E661D5145D80044369F /* DOFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD874E651D5145D80044369F /* DOFavoriteButton.swift */; };
@@ -38,7 +37,6 @@
 		DD7C72D71D36D6AD00B39D87 /* punch_edit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = punch_edit.mp3; sourceTree = "<group>"; };
 		DD874E4F1D3EB8C20044369F /* FavsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavsListTableViewController.swift; sourceTree = "<group>"; };
 		DD874E511D3ED5410044369F /* JokeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokeController.swift; sourceTree = "<group>"; };
-		DD874E5D1D4FD7510044369F /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		DD874E611D513A4A0044369F /* UIColor+AppColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColorPalette.swift"; sourceTree = "<group>"; };
 		DD874E621D513A4A0044369F /* AppearanceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearanceController.swift; sourceTree = "<group>"; };
 		DD874E651D5145D80044369F /* DOFavoriteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOFavoriteButton.swift; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 				DDDF19AE1D344A39001A45A5 /* RoundButton.swift */,
 				DDD06F231D528BFD00FD825A /* Main.storyboard */,
 				DD874E4F1D3EB8C20044369F /* FavsListTableViewController.swift */,
-				DD874E5D1D4FD7510044369F /* SettingsTableViewController.swift */,
 				DD77D3311D51638600FD5377 /* FavedJokeViewController.swift */,
 				DD874E611D513A4A0044369F /* UIColor+AppColorPalette.swift */,
 				DD874E621D513A4A0044369F /* AppearanceController.swift */,
@@ -209,7 +206,6 @@
 				DD77D3321D51638600FD5377 /* FavedJokeViewController.swift in Sources */,
 				DD874E501D3EB8C20044369F /* FavsListTableViewController.swift in Sources */,
 				DD90B3AF1C59D4AB008B21EE /* AppDelegate.swift in Sources */,
-				DD874E5E1D4FD7510044369F /* SettingsTableViewController.swift in Sources */,
 				DD0079871D2C712700E00051 /* Joke.swift in Sources */,
 				DD874E641D513A4A0044369F /* AppearanceController.swift in Sources */,
 				DD874E521D3ED5410044369F /* JokeController.swift in Sources */,
@@ -319,7 +315,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = funFacts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = parkerdonat.chuckfacts;
+				PRODUCT_BUNDLE_IDENTIFIER = com.parkerdonat.chuckfacts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -332,7 +328,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = funFacts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = parkerdonat.chuckfacts;
+				PRODUCT_BUNDLE_IDENTIFIER = com.parkerdonat.chuckfacts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

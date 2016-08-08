@@ -37,6 +37,7 @@ func ==(lhs: Joke, rhs: Joke) -> Bool {
 struct ChuckModel {
     let chuckJokes = [
         
+        "Chuck Norris caught all the Pokémon in one throw with the Pokémon Go app.",
         "A grown adult has 206 bones in their body but when Chuck Norris hits you with a roundhouse kick to the face you'll have about 3,000,000 bones.",
         "That's not an eclipse. It’s the sun hiding from Chuck Norris.",
         "Ghosts sit around the campfire and tell Chuck Norris stories.",

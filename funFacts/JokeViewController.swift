@@ -31,16 +31,6 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
         
         isLightColor()
         
-        if isLight == false {
-            // White
-            funFactLabel.textColor = .whiteColor()
-            chuckTitle.titleLabel?.textColor = .whiteColor()
-        } else {
-            // Dark
-            funFactLabel.textColor = .blackColor()
-            chuckTitle.titleLabel?.textColor = .blackColor()
-        }
-        
         let randomColor: UIColor = .randomColor()
         view.backgroundColor = randomColor
         
@@ -55,9 +45,9 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     // HIDE STATUS BAR
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
+//    override func prefersStatusBarHidden() -> Bool {
+//        return true
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -187,12 +177,15 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: - BUTTON FOR FAV LIST
     @IBAction func favListButtonTapped(sender: AnyObject) {
-    
+        
     }
     
     // MARK: -  BUTTON FOR SETTINGS PAGE
     @IBAction func settingButtonTapped(sender: AnyObject) {
-        
+        if let text = funFactLabel.text {
+            let share = UIActivityViewController(activityItems: [text], applicationActivities: nil)
+            presentViewController(share, animated: true, completion: nil)
+        }
     }
     
     // MARK: - LOGIC FOR CHANGING ELEMENTS TO WHITE OR BLACK BASED ON RANDOM COLOR
@@ -211,7 +204,7 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
             funFactLabel.textColor = .blackColor()
             lineBreak.backgroundColor = .blackColor()
             listButton.setImage(UIImage(named: "favorite_list_black"), forState: UIControlState.Normal)
-            settingsButton.setImage(UIImage(named: "settings_black"), forState: UIControlState.Normal)
+            settingsButton.setImage(UIImage(named: "share_black"), forState: UIControlState.Normal)
         } else {
             isLight = false
             NSLog("Background color is dark \(colorBrightness)")
@@ -219,7 +212,7 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
             funFactLabel.textColor = .whiteColor()
             lineBreak.backgroundColor = .whiteColor()
             listButton.setImage(UIImage(named: "favorite_list_white"), forState: UIControlState.Normal)
-            settingsButton.setImage(UIImage(named: "settings_white"), forState: UIControlState.Normal)
+            settingsButton.setImage(UIImage(named: "share_white"), forState: UIControlState.Normal)
         }
     }
     
@@ -284,11 +277,12 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: - NAVIGATION
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "toSettings" {
-            guard let settingsTableViewController = segue.destinationViewController as? SettingsTableViewController else { return }
-            settingsTableViewController.navigationItem.title = "Settings"
-            settingsTableViewController.currentColor = getCurrentBackgroundColor()
-        } else if segue.identifier == "toList" {
+//        if segue.identifier == "toSettings" {
+//            guard let settingsTableViewController = segue.destinationViewController as? SettingsTableViewController else { return }
+//            settingsTableViewController.navigationItem.title = "Settings"
+//            settingsTableViewController.currentColor = getCurrentBackgroundColor()
+//        } else
+            if segue.identifier == "toList" {
             guard let favsListTableViewController = segue.destinationViewController as? FavsListTableViewController else { return }
             favsListTableViewController.navigationItem.title = "Favorites"
             favsListTableViewController.currentColor = getCurrentBackgroundColor()
