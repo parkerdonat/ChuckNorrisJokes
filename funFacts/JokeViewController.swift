@@ -44,7 +44,7 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
         
         addTapGesture()
         addSwipeGesture()
-    
+        
         // Star stapped animation
         starButton.addTarget(self, action: #selector(starButtonTappedForAnimation), forControlEvents: .TouchUpInside)
     }
@@ -154,10 +154,10 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
         }
     }
     
-//    func trashJoke() {
-//        // Prompt to make sure to permanantly delete
-//        // Delete Joke from joke array
-//    }
+    //    func trashJoke() {
+    //        // Prompt to make sure to permanantly delete
+    //        // Delete Joke from joke array
+    //    }
     
     override func canBecomeFirstResponder() -> Bool {
         return true
@@ -174,9 +174,9 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
         if action == #selector(favoriteButtonTapped) {
             return true
         }
-//        if action == #selector(trashJoke) {
-//            return true
-//        }
+        //        if action == #selector(trashJoke) {
+        //            return true
+        //        }
         return false
     }
     
@@ -283,12 +283,7 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: - NAVIGATION
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == "toSettings" {
-//            guard let settingsTableViewController = segue.destinationViewController as? SettingsTableViewController else { return }
-//            settingsTableViewController.navigationItem.title = "Settings"
-//            settingsTableViewController.currentColor = getCurrentBackgroundColor()
-//        } else
-            if segue.identifier == "toList" {
+        if segue.identifier == "toList" {
             guard let favsListTableViewController = segue.destinationViewController as? FavsListTableViewController else { return }
             favsListTableViewController.navigationItem.title = "Favorites"
             favsListTableViewController.currentColor = getCurrentBackgroundColor()

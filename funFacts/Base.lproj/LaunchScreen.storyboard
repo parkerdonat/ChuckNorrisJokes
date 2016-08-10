@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8150" systemVersion="15A204g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8122"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,8 +16,30 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HDv-LW-70h">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="punch_image" translatesAutoresizingMaskIntoConstraints="NO" id="GgB-z5-npJ">
+                                        <rect key="frame" x="175" y="212" width="250" height="175"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="GgB-z5-npJ" secondAttribute="trailing" constant="175" id="AdH-Yw-ply"/>
+                                    <constraint firstItem="GgB-z5-npJ" firstAttribute="top" secondItem="HDv-LW-70h" secondAttribute="top" constant="212" id="HzZ-ux-rL1"/>
+                                    <constraint firstItem="GgB-z5-npJ" firstAttribute="leading" secondItem="HDv-LW-70h" secondAttribute="leading" constant="175" id="lH3-Ou-JM0"/>
+                                    <constraint firstItem="GgB-z5-npJ" firstAttribute="centerX" secondItem="HDv-LW-70h" secondAttribute="centerX" id="qFm-9i-5iO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HDv-LW-70h" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="AEL-Lm-XA9"/>
+                            <constraint firstAttribute="trailing" secondItem="HDv-LW-70h" secondAttribute="trailing" id="IIm-Fa-Lfp"/>
+                            <constraint firstItem="HDv-LW-70h" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="XWu-T6-Yic"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="HDv-LW-70h" secondAttribute="bottom" id="fgL-fm-u8e"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +47,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="punch_image" width="250" height="175"/>
+    </resources>
 </document>
