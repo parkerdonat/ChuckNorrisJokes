@@ -41,7 +41,12 @@ class FavedJokeViewController: UIViewController {
     @IBAction func shareButtonTapped(sender: AnyObject) {
         if let text = favJokeLabel.text {
             let share = UIActivityViewController(activityItems: [text], applicationActivities: nil)
-            presentViewController(share, animated: true, completion: nil)
+            
+            //Excluded Activities
+            share.excludedActivityTypes = [UIActivityTypeAirDrop, UIActivityTypeAddToReadingList, UIActivityTypeOpenInIBooks, UIActivityTypePrint, UIActivityTypePostToVimeo, UIActivityTypePostToWeibo, UIActivityTypePostToFlickr, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll]
+            
+            share.popoverPresentationController?.sourceView = sender as? UIView
+            self.presentViewController(share, animated: true, completion: nil)
         }
     }
     

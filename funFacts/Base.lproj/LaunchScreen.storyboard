@@ -29,6 +29,7 @@
                                     <constraint firstAttribute="trailing" secondItem="GgB-z5-npJ" secondAttribute="trailing" constant="175" id="AdH-Yw-ply"/>
                                     <constraint firstItem="GgB-z5-npJ" firstAttribute="top" secondItem="HDv-LW-70h" secondAttribute="top" constant="212" id="HzZ-ux-rL1"/>
                                     <constraint firstAttribute="bottom" secondItem="GgB-z5-npJ" secondAttribute="bottom" constant="213" id="Ick-y6-Kzx"/>
+                                    <constraint firstItem="GgB-z5-npJ" firstAttribute="centerY" secondItem="HDv-LW-70h" secondAttribute="centerY" id="Pwx-Sv-50V"/>
                                     <constraint firstItem="GgB-z5-npJ" firstAttribute="leading" secondItem="HDv-LW-70h" secondAttribute="leading" constant="175" id="lH3-Ou-JM0"/>
                                     <constraint firstItem="GgB-z5-npJ" firstAttribute="centerX" secondItem="HDv-LW-70h" secondAttribute="centerX" id="qFm-9i-5iO"/>
                                 </constraints>

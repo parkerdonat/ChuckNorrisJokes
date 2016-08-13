@@ -107,10 +107,10 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
         becomeFirstResponder()
         let menu = UIMenuController.sharedMenuController()
         let dismiss = UIMenuItem(title: "❌", action: #selector(dismissMenu))
-        let share = UIMenuItem(title: "Share", action: #selector(shareButtonTapped))
+        //let share = UIMenuItem(title: "Share", action: #selector(shareButtonTapped))
         let favorite = UIMenuItem(title: "⭐️", action: #selector(favoriteButtonTapped))
         //let trash = UIMenuItem(title: "🗑", action: #selector(trashJoke))
-        menu.menuItems = [dismiss, share, favorite]
+        menu.menuItems = [dismiss, favorite]
         menu.setTargetRect(CGRectMake(100, 0, 100, 100), inView: self.funFactLabel)
         menu.setMenuVisible(true, animated: true)
     }
@@ -120,12 +120,28 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
         // No extra code needed, dismisses automatically
     }
     
-    func shareButtonTapped() {
-        if let text = funFactLabel.text {
-            let share = UIActivityViewController(activityItems: [text], applicationActivities: nil)
-            presentViewController(share, animated: true, completion: nil)
-        }
-    }
+//    func shareButtonTapped(sourceView: UIView) {
+//        if let text = funFactLabel.text {
+//            let share = UIActivityViewController(activityItems: [text], applicationActivities: nil)
+//            
+//            //Excluded Activities
+//            share.excludedActivityTypes = [UIActivityTypeAirDrop, UIActivityTypeAddToReadingList, UIActivityTypeOpenInIBooks, UIActivityTypePrint, UIActivityTypePostToVimeo, UIActivityTypePostToWeibo, UIActivityTypePostToFlickr, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll]
+//            
+//            //if iPhone
+//            if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
+//                self.presentViewController(share, animated: true, completion: nil)
+//            } else {
+//                //if iPad
+//                if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+//                    if share.respondsToSelector(Selector("popoverPresentationController")) {
+//                        share.popoverPresentationController?.sourceView = self.view
+//                    }
+//                }
+//            }
+//            
+//            self.presentViewController(share, animated: true, completion: nil)
+//        }
+//    }
     
     func favoriteButtonTapped(sender: DOFavoriteButton) {
         // Save favorite joke
@@ -168,9 +184,9 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
         if action == #selector(dismissMenu) {
             return true
         }
-        if action == #selector(shareButtonTapped) {
-            return true
-        }
+//        if action == #selector(shareButtonTapped) {
+//            return true
+//        }
         if action == #selector(favoriteButtonTapped) {
             return true
         }
@@ -185,11 +201,16 @@ class JokeViewController: UIViewController, UIGestureRecognizerDelegate {
         
     }
     
-    // MARK: -  BUTTON FOR SETTINGS PAGE
+    // MARK: -  BUTTON FOR SHARING
     @IBAction func settingButtonTapped(sender: AnyObject) {
         if let text = funFactLabel.text {
             let share = UIActivityViewController(activityItems: [text], applicationActivities: nil)
-            presentViewController(share, animated: true, completion: nil)
+            
+            //Excluded Activities
+            share.excludedActivityTypes = [UIActivityTypeAirDrop, UIActivityTypeAddToReadingList, UIActivityTypeOpenInIBooks, UIActivityTypePrint, UIActivityTypePostToVimeo, UIActivityTypePostToWeibo, UIActivityTypePostToFlickr, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll]
+            
+            share.popoverPresentationController?.sourceView = sender as? UIView
+            self.presentViewController(share, animated: true, completion: nil)
         }
     }
     
