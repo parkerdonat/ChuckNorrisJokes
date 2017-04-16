@@ -474,7 +474,7 @@ struct ChuckModel {
         "Sharks have a Chuck Norris week.",
         "Chuck Norris can speak Russian in Chinese.",
         "Chuck Norris once sold eBay to eBay on eBay.",
-        /*"Chuck Norris’s dog pick’s up his own sh*t because Chuck Norris doesn't take sh*t from anyone.",*/
+        "Chuck Norris’s dog pick’s up his own sh*t because Chuck Norris doesn't take sh*t from anyone.",
         "Chuck Norris can sneeze with his eyes open.",
         "When Alexander Bell invented the telephone he had 3 missed calls from Chuck Norris.",
         "Chuck Norris counted to infinity. Twice.",
@@ -489,7 +489,11 @@ struct ChuckModel {
         "What is Chuck Norris' favorite color? Red of course.",
         "A meteor did not kill the dinosaurs, Chuck Norris just went on a hunting trip.",
         "Chuck Norris doesn't fall, he attracts the earth to him.",
-        "Chuck Norris can download the whole internet onto a floppy disk."
+        "Chuck Norris can download the whole internet onto a floppy disk.",
+        "Superheroes read Chuck Norris Comics.",
+        "At night the boogeyman checks under the bed for Chuck Norris.",
+        "Cats say they have Chuck-like reflexes.",
+        "Chuck Norris' first name is actually Carlos."
     ]
     
     func getRandomJoke() -> String {
